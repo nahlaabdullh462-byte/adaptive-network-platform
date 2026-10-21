@@ -1,0 +1,120 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 480" width="100%" height="100%">
+  <defs>
+    <linearGradient id="dmzBg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#0B0F19" />
+      <stop offset="100%" stop-color="#1A1A3E" />
+    </linearGradient>
+    <linearGradient id="fwGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#EF4444" />
+      <stop offset="100%" stop-color="#B91C1C" />
+    </linearGradient>
+  </defs>
+
+  <rect width="900" height="480" rx="16" fill="url(#dmzBg)" />
+  <rect width="896" height="476" x="2" y="2" rx="15" fill="none" stroke="#EF4444" stroke-opacity="0.3" stroke-width="1.5" />
+
+  <!-- Header -->
+  <g transform="translate(40, 40)">
+    <text x="0" y="20" font-family="'Cairo', sans-serif" font-size="22" font-weight="800" fill="#FFFFFF">
+      طوبولوجيا أمن الشبكات ومنطقة التجريد العسكري: Enterprise DMZ &amp; Firewall Architecture
+    </text>
+    <text x="0" y="40" font-family="'JetBrains Mono', monospace" font-size="12" fill="#94A3B8">
+      DUAL-HOMED FIREWALL TOPOLOGY (UNTRUSTED WAN &lt;-&gt; DMZ PERIMETER &lt;-&gt; TRUSTED LAN)
+    </text>
+  </g>
+
+  <!-- 1. Untrusted Zone (Internet / WAN) -->
+  <g transform="translate(40, 110)">
+    <rect width="180" height="280" rx="12" fill="rgba(239, 68, 68, 0.08)" stroke="#EF4444" stroke-dasharray="4,4" stroke-width="1.5" />
+    <text x="90" y="30" font-family="'Cairo', sans-serif" font-size="14" font-weight="800" fill="#F87171" text-anchor="middle">الإنترنت الخارجي</text>
+    <text x="90" y="48" font-family="'JetBrains Mono', monospace" font-size="10" fill="#94A3B8" text-anchor="middle">UNTRUSTED ZONE</text>
+
+    <!-- Cloud Icon -->
+    <path d="M60,110 a25,25 0 0,1 40,-15 a30,30 0 0,1 40,20 a20,20 0 0,1 -10,35 l-60,0 a20,20 0 0,1 -10,-40 z" fill="#334155" />
+    <text x="90" y="135" font-family="'JetBrains Mono', monospace" font-size="11" font-weight="700" fill="#FFF" text-anchor="middle">Public WAN</text>
+
+    <!-- Hacker / External Traffic Indicator -->
+    <rect x="25" y="190" width="130" height="70" rx="8" fill="#1E293B" stroke="#475569" />
+    <text x="90" y="215" font-family="'Cairo', sans-serif" font-size="11" fill="#FCA5A5" text-anchor="middle">حركة بيانات خارجية</text>
+    <text x="90" y="235" font-family="'JetBrains Mono', monospace" font-size="10" fill="#94A3B8" text-anchor="middle">Port 80, 443 Only</text>
+    <text x="90" y="250" font-family="'Cairo', sans-serif" font-size="10" fill="#EF4444" text-anchor="middle">حظر كافة المنافذ الأخرى</text>
+  </g>
+
+  <!-- Firewall Device (Center-Left) -->
+  <g transform="translate(250, 190)">
+    <!-- Firewall Wall Graphic -->
+    <rect width="60" height="120" rx="8" fill="url(#fwGrad)" stroke="#FCA5A5" stroke-width="1.5" />
+    <text x="30" y="65" font-family="'JetBrains Mono', monospace" font-size="14" font-weight="900" fill="#FFF" text-anchor="middle" transform="rotate(-90 30,65)">FIREWALL</text>
+    <!-- Bricks pattern overlay -->
+    <line x1="0" y1="30" x2="60" y2="30" stroke="#FFF" stroke-opacity="0.3" stroke-width="1" />
+    <line x1="0" y1="60" x2="60" y2="60" stroke="#FFF" stroke-opacity="0.3" stroke-width="1" />
+    <line x1="0" y1="90" x2="60" y2="90" stroke="#FFF" stroke-opacity="0.3" stroke-width="1" />
+  </g>
+
+  <!-- 2. DMZ Zone (Center-Top/Bottom) -->
+  <g transform="translate(340, 110)">
+    <rect width="250" height="280" rx="12" fill="rgba(245, 158, 11, 0.08)" stroke="#F59E0B" stroke-dasharray="4,4" stroke-width="1.5" />
+    <text x="125" y="30" font-family="'Cairo', sans-serif" font-size="14" font-weight="800" fill="#FBBF24" text-anchor="middle">منطقة الخدمات المنزوعة السلاح</text>
+    <text x="125" y="48" font-family="'JetBrains Mono', monospace" font-size="10" fill="#94A3B8" text-anchor="middle">DMZ (DEMILITARIZED ZONE)</text>
+
+    <!-- Web Server Box -->
+    <rect x="25" y="70" width="200" height="55" rx="8" fill="#1E293B" stroke="#F59E0B" stroke-width="1" />
+    <text x="45" y="94" font-family="'JetBrains Mono', monospace" font-size="13" font-weight="800" fill="#FBBF24">WEB SERVER</text>
+    <text x="45" y="112" font-family="'JetBrains Mono', monospace" font-size="10" fill="#94A3B8">IP: 172.16.1.10 (HTTPS/443)</text>
+
+    <!-- DNS / Mail Server Box -->
+    <rect x="25" y="140" width="200" height="55" rx="8" fill="#1E293B" stroke="#F59E0B" stroke-width="1" />
+    <text x="45" y="164" font-family="'JetBrains Mono', monospace" font-size="13" font-weight="800" fill="#FBBF24">MAIL / DNS SERVER</text>
+    <text x="45" y="182" font-family="'JetBrains Mono', monospace" font-size="10" fill="#94A3B8">IP: 172.16.1.20 (SMTP/DNS)</text>
+
+    <!-- Rule Note -->
+    <rect x="25" y="210" width="200" height="55" rx="8" fill="rgba(245, 158, 11, 0.15)" />
+    <text x="125" y="232" font-family="'Cairo', sans-serif" font-size="10.5" font-weight="700" fill="#FDE047" text-anchor="middle">قاعدة أمنية حاسمة:</text>
+    <text x="125" y="250" font-family="'Cairo', sans-serif" font-size="10" fill="#FFF" text-anchor="middle">الـ DMZ لا يستطيع فتح اتصالات مع الـ LAN</text>
+  </g>
+
+  <!-- Internal Firewall Device -->
+  <g transform="translate(620, 190)">
+    <rect width="35" height="120" rx="6" fill="#0284C7" stroke="#38BDF8" stroke-width="1.5" />
+    <text x="18" y="65" font-family="'JetBrains Mono', monospace" font-size="11" font-weight="900" fill="#FFF" text-anchor="middle" transform="rotate(-90 18,65)">INTERNAL FW</text>
+  </g>
+
+  <!-- 3. Trusted LAN Zone (Right) -->
+  <g transform="translate(680, 110)">
+    <rect width="180" height="280" rx="12" fill="rgba(16, 185, 129, 0.08)" stroke="#10B981" stroke-width="1.5" />
+    <text x="90" y="30" font-family="'Cairo', sans-serif" font-size="14" font-weight="800" fill="#34D399" text-anchor="middle">الشبكة الداخلية الموثوقة</text>
+    <text x="90" y="48" font-family="'JetBrains Mono', monospace" font-size="10" fill="#94A3B8" text-anchor="middle">TRUSTED LAN ZONE</text>
+
+    <!-- Database Server -->
+    <rect x="20" y="75" width="140" height="50" rx="8" fill="#1E293B" stroke="#10B981" />
+    <text x="90" y="98" font-family="'JetBrains Mono', monospace" font-size="11" font-weight="800" fill="#34D399" text-anchor="middle">SQL DATABASE</text>
+    <text x="90" y="114" font-family="'JetBrains Mono', monospace" font-size="9" fill="#94A3B8" text-anchor="middle">10.0.0.50 (Port 3306)</text>
+
+    <!-- Core Switch & Workstations -->
+    <rect x="20" y="145" width="140" height="50" rx="8" fill="#1E293B" stroke="#10B981" />
+    <text x="90" y="168" font-family="'JetBrains Mono', monospace" font-size="11" font-weight="800" fill="#34D399" text-anchor="middle">USER HOSTS</text>
+    <text x="90" y="184" font-family="'JetBrains Mono', monospace" font-size="9" fill="#94A3B8" text-anchor="middle">Subnet: 10.0.0.0/24</text>
+
+    <!-- Security Badge -->
+    <rect x="20" y="215" width="140" height="50" rx="8" fill="rgba(16, 185, 129, 0.15)" />
+    <text x="90" y="238" font-family="'Cairo', sans-serif" font-size="11" font-weight="700" fill="#34D399" text-anchor="middle">حماية كاملة</text>
+    <text x="90" y="254" font-family="'Cairo', sans-serif" font-size="9.5" fill="#FFF" text-anchor="middle">معزولة تماماً عن الخارج</text>
+  </g>
+
+  <!-- Connectors -->
+  <line x1="220" y1="250" x2="250" y2="250" stroke="#EF4444" stroke-width="2.5" />
+  <line x1="310" y1="250" x2="340" y2="250" stroke="#F59E0B" stroke-width="2.5" />
+  <line x1="590" y1="250" x2="620" y2="250" stroke="#38BDF8" stroke-width="2.5" />
+  <line x1="655" y1="250" x2="680" y2="250" stroke="#10B981" stroke-width="2.5" />
+
+  <!-- Bottom Legend -->
+  <g transform="translate(40, 420)">
+    <rect width="820" height="40" rx="8" fill="rgba(255,255,255,0.04)" />
+    <text x="410" y="25" font-family="'Cairo', sans-serif" font-size="12" fill="#94A3B8" text-anchor="middle">
+      <tspan fill="#EF4444">■ غير موثوق (Untrusted)</tspan> | 
+      <tspan fill="#F59E0B">■ منطقة وسيطة (DMZ)</tspan> | 
+      <tspan fill="#10B981">■ شبكة موثوقة (Trusted LAN)</tspan> | 
+      <tspan fill="#38BDF8">■ فحص الحزم ذو الحالة (Stateful Packet Inspection)</tspan>
+    </text>
+  </g>
+</svg>

@@ -1,0 +1,139 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 500" width="100%" height="100%">
+  <defs>
+    <linearGradient id="subBg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#0F172A" />
+      <stop offset="100%" stop-color="#1E1B4B" />
+    </linearGradient>
+    <linearGradient id="netGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#38BDF8" />
+      <stop offset="100%" stop-color="#0284C7" />
+    </linearGradient>
+    <linearGradient id="borrowGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#F59E0B" />
+      <stop offset="100%" stop-color="#D97706" />
+    </linearGradient>
+    <linearGradient id="hostGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#10B981" />
+      <stop offset="100%" stop-color="#059669" />
+    </linearGradient>
+  </defs>
+
+  <!-- Background -->
+  <rect width="900" height="500" rx="16" fill="url(#subBg)" />
+  <rect width="896" height="496" x="2" y="2" rx="15" fill="none" stroke="#38BDF8" stroke-opacity="0.25" stroke-width="1.5" />
+
+  <!-- Title & Header -->
+  <g transform="translate(40, 45)">
+    <rect width="40" height="40" rx="10" fill="#38BDF8" fill-opacity="0.15" />
+    <text x="20" y="26" font-family="'JetBrains Mono', monospace" font-size="20" fill="#38BDF8" text-anchor="middle" font-weight="800">/</text>
+    
+    <text x="55" y="22" font-family="'Cairo', sans-serif" font-size="22" font-weight="800" fill="#FFFFFF">
+      هندسة تقسيم الشبكات: IPv4 Subnetting &amp; CIDR Bit Allocation
+    </text>
+    <text x="55" y="40" font-family="'JetBrains Mono', monospace" font-size="12" fill="#94A3B8">
+      EXAMPLE: 192.168.10.0 /26 (Subnet Mask: 255.255.255.192)
+    </text>
+  </g>
+
+  <!-- 32-Bit Binary Representation Container -->
+  <g transform="translate(40, 115)">
+    <!-- Octet 1 -->
+    <rect x="0" y="0" width="190" height="65" rx="10" fill="url(#netGrad)" fill-opacity="0.15" stroke="#38BDF8" stroke-width="1.5" />
+    <text x="95" y="26" font-family="'JetBrains Mono', monospace" font-size="13" font-weight="700" fill="#38BDF8" text-anchor="middle">OCTET 1 (192)</text>
+    <text x="95" y="50" font-family="'JetBrains Mono', monospace" font-size="15" font-weight="800" fill="#FFFFFF" text-anchor="middle">1 1 0 0 0 0 0 0</text>
+
+    <!-- Dot -->
+    <circle cx="200" cy="32" r="3" fill="#64748B" />
+
+    <!-- Octet 2 -->
+    <rect x="210" y="0" width="190" height="65" rx="10" fill="url(#netGrad)" fill-opacity="0.15" stroke="#38BDF8" stroke-width="1.5" />
+    <text x="305" y="26" font-family="'JetBrains Mono', monospace" font-size="13" font-weight="700" fill="#38BDF8" text-anchor="middle">OCTET 2 (168)</text>
+    <text x="305" y="50" font-family="'JetBrains Mono', monospace" font-size="15" font-weight="800" fill="#FFFFFF" text-anchor="middle">1 0 1 0 1 0 0 0</text>
+
+    <!-- Dot -->
+    <circle cx="410" cy="32" r="3" fill="#64748B" />
+
+    <!-- Octet 3 -->
+    <rect x="420" y="0" width="190" height="65" rx="10" fill="url(#netGrad)" fill-opacity="0.15" stroke="#38BDF8" stroke-width="1.5" />
+    <text x="515" y="26" font-family="'JetBrains Mono', monospace" font-size="13" font-weight="700" fill="#38BDF8" text-anchor="middle">OCTET 3 (10)</text>
+    <text x="515" y="50" font-family="'JetBrains Mono', monospace" font-size="15" font-weight="800" fill="#FFFFFF" text-anchor="middle">0 0 0 0 1 0 1 0</text>
+
+    <!-- Dot -->
+    <circle cx="620" cy="32" r="3" fill="#64748B" />
+
+    <!-- Octet 4 (Split: 2 Borrowed Bits + 6 Host Bits) -->
+    <rect x="630" y="0" width="55" height="65" rx="8" fill="url(#borrowGrad)" fill-opacity="0.25" stroke="#F59E0B" stroke-width="1.8" />
+    <text x="657" y="26" font-family="'JetBrains Mono', monospace" font-size="11" font-weight="700" fill="#F59E0B" text-anchor="middle">BORROW</text>
+    <text x="657" y="50" font-family="'JetBrains Mono', monospace" font-size="15" font-weight="800" fill="#FDE047" text-anchor="middle">1 1</text>
+
+    <rect x="690" y="0" width="130" height="65" rx="8" fill="url(#hostGrad)" fill-opacity="0.15" stroke="#10B981" stroke-width="1.8" />
+    <text x="755" y="26" font-family="'JetBrains Mono', monospace" font-size="11" font-weight="700" fill="#10B981" text-anchor="middle">HOST BITS (h=6)</text>
+    <text x="755" y="50" font-family="'JetBrains Mono', monospace" font-size="15" font-weight="800" fill="#FFFFFF" text-anchor="middle">0 0 0 0 0 0</text>
+  </g>
+
+  <!-- Bit Allocation Brackets & Indicators -->
+  <g transform="translate(40, 195)">
+    <!-- Network Portion Line -->
+    <line x1="0" y1="5" x2="685" y2="5" stroke="#38BDF8" stroke-width="2" />
+    <text x="342" y="24" font-family="'Cairo', sans-serif" font-size="13" font-weight="700" fill="#38BDF8" text-anchor="middle">
+      ← بتات الشبكة المعتمدة (26 بت = 24 بت أصلية + 2 بت مستعارة) →
+    </text>
+
+    <!-- Host Portion Line -->
+    <line x1="690" y1="5" x2="820" y2="5" stroke="#10B981" stroke-width="2" />
+    <text x="755" y="24" font-family="'Cairo', sans-serif" font-size="13" font-weight="700" fill="#10B981" text-anchor="middle">
+      ← بتات المضيفين (6 بت) →
+    </text>
+  </g>
+
+  <!-- 4 Calculated Subnets Grid Cards -->
+  <g transform="translate(40, 245)">
+    <!-- Subnet 1 -->
+    <rect x="0" y="0" width="195" height="150" rx="10" fill="#1E293B" stroke="#334155" stroke-width="1" />
+    <rect x="1" y="1" width="193" height="30" rx="9" fill="rgba(56, 189, 248, 0.15)" />
+    <text x="97" y="21" font-family="'JetBrains Mono', monospace" font-size="12" font-weight="800" fill="#38BDF8" text-anchor="middle">SUBNET #1</text>
+    <text x="14" y="52" font-family="'Cairo', sans-serif" font-size="11" fill="#94A3B8">عنوان الشبكة: <tspan font-family="'JetBrains Mono'" font-weight="700" fill="#FFF">.0</tspan></text>
+    <text x="14" y="74" font-family="'Cairo', sans-serif" font-size="11" fill="#94A3B8">أول عنوان متاح: <tspan font-family="'JetBrains Mono'" font-weight="700" fill="#10B981">.1</tspan></text>
+    <text x="14" y="96" font-family="'Cairo', sans-serif" font-size="11" fill="#94A3B8">آخر عنوان متاح: <tspan font-family="'JetBrains Mono'" font-weight="700" fill="#10B981">.62</tspan></text>
+    <text x="14" y="118" font-family="'Cairo', sans-serif" font-size="11" fill="#94A3B8">عنوان البث: <tspan font-family="'JetBrains Mono'" font-weight="700" fill="#F43F5E">.63</tspan></text>
+    <text x="14" y="138" font-family="'Cairo', sans-serif" font-size="10" fill="#38BDF8">السعة: 62 جهازاً متاحاً</text>
+
+    <!-- Subnet 2 -->
+    <rect x="210" y="0" width="195" height="150" rx="10" fill="#1E293B" stroke="#334155" stroke-width="1" />
+    <rect x="211" y="1" width="193" height="30" rx="9" fill="rgba(56, 189, 248, 0.15)" />
+    <text x="307" y="21" font-family="'JetBrains Mono', monospace" font-size="12" font-weight="800" fill="#38BDF8" text-anchor="middle">SUBNET #2</text>
+    <text x="224" y="52" font-family="'Cairo', sans-serif" font-size="11" fill="#94A3B8">عنوان الشبكة: <tspan font-family="'JetBrains Mono'" font-weight="700" fill="#FFF">.64</tspan></text>
+    <text x="224" y="74" font-family="'Cairo', sans-serif" font-size="11" fill="#94A3B8">أول عنوان متاح: <tspan font-family="'JetBrains Mono'" font-weight="700" fill="#10B981">.65</tspan></text>
+    <text x="224" y="96" font-family="'Cairo', sans-serif" font-size="11" fill="#94A3B8">آخر عنوان متاح: <tspan font-family="'JetBrains Mono'" font-weight="700" fill="#10B981">.126</tspan></text>
+    <text x="224" y="118" font-family="'Cairo', sans-serif" font-size="11" fill="#94A3B8">عنوان البث: <tspan font-family="'JetBrains Mono'" font-weight="700" fill="#F43F5E">.127</tspan></text>
+    <text x="224" y="138" font-family="'Cairo', sans-serif" font-size="10" fill="#38BDF8">السعة: 62 جهازاً متاحاً</text>
+
+    <!-- Subnet 3 -->
+    <rect x="420" y="0" width="195" height="150" rx="10" fill="#1E293B" stroke="#334155" stroke-width="1" />
+    <rect x="421" y="1" width="193" height="30" rx="9" fill="rgba(56, 189, 248, 0.15)" />
+    <text x="517" y="21" font-family="'JetBrains Mono', monospace" font-size="12" font-weight="800" fill="#38BDF8" text-anchor="middle">SUBNET #3</text>
+    <text x="434" y="52" font-family="'Cairo', sans-serif" font-size="11" fill="#94A3B8">عنوان الشبكة: <tspan font-family="'JetBrains Mono'" font-weight="700" fill="#FFF">.128</tspan></text>
+    <text x="434" y="74" font-family="'Cairo', sans-serif" font-size="11" fill="#94A3B8">أول عنوان متاح: <tspan font-family="'JetBrains Mono'" font-weight="700" fill="#10B981">.129</tspan></text>
+    <text x="434" y="96" font-family="'Cairo', sans-serif" font-size="11" fill="#94A3B8">آخر عنوان متاح: <tspan font-family="'JetBrains Mono'" font-weight="700" fill="#10B981">.190</tspan></text>
+    <text x="434" y="118" font-family="'Cairo', sans-serif" font-size="11" fill="#94A3B8">عنوان البث: <tspan font-family="'JetBrains Mono'" font-weight="700" fill="#F43F5E">.191</tspan></text>
+    <text x="434" y="138" font-family="'Cairo', sans-serif" font-size="10" fill="#38BDF8">السعة: 62 جهازاً متاحاً</text>
+
+    <!-- Subnet 4 -->
+    <rect x="630" y="0" width="195" height="150" rx="10" fill="#1E293B" stroke="#334155" stroke-width="1" />
+    <rect x="631" y="1" width="193" height="30" rx="9" fill="rgba(56, 189, 248, 0.15)" />
+    <text x="727" y="21" font-family="'JetBrains Mono', monospace" font-size="12" font-weight="800" fill="#38BDF8" text-anchor="middle">SUBNET #4</text>
+    <text x="644" y="52" font-family="'Cairo', sans-serif" font-size="11" fill="#94A3B8">عنوان الشبكة: <tspan font-family="'JetBrains Mono'" font-weight="700" fill="#FFF">.192</tspan></text>
+    <text x="644" y="74" font-family="'Cairo', sans-serif" font-size="11" fill="#94A3B8">أول عنوان متاح: <tspan font-family="'JetBrains Mono'" font-weight="700" fill="#10B981">.193</tspan></text>
+    <text x="644" y="96" font-family="'Cairo', sans-serif" font-size="11" fill="#94A3B8">آخر عنوان متاح: <tspan font-family="'JetBrains Mono'" font-weight="700" fill="#10B981">.254</tspan></text>
+    <text x="644" y="118" font-family="'Cairo', sans-serif" font-size="11" fill="#94A3B8">عنوان البث: <tspan font-family="'JetBrains Mono'" font-weight="700" fill="#F43F5E">.255</tspan></text>
+    <text x="644" y="138" font-family="'Cairo', sans-serif" font-size="10" fill="#38BDF8">السعة: 62 جهازاً متاحاً</text>
+  </g>
+
+  <!-- Bottom Formula Banner -->
+  <g transform="translate(40, 420)">
+    <rect width="820" height="50" rx="8" fill="rgba(91, 79, 232, 0.12)" stroke="#5B4FE8" stroke-width="1" />
+    <text x="410" y="30" font-family="'JetBrains Mono', monospace" font-size="13" font-weight="700" fill="#A5B4FC" text-anchor="middle">
+      FORMULAS: Subnets = 2^n (2^2 = 4) | Usable Hosts = 2^h - 2 (2^6 - 2 = 62) | Block Size = 256 - 192 = 64
+    </text>
+  </g>
+</svg>

@@ -1,0 +1,2336 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="NetLearn Pro — منصة تعلم تكيفي أكاديمية لهندسة وإدارة الشبكات، محاكاة Cisco IOS، مختبرات Wireshark و Subnetting وVLSM.">
+    <title>المحتوى الأكاديمي والدروس المدمجة | NetLearn Pro</title>
+    <link rel="icon" type="image/svg+xml" href="./assets/img/icon.svg">
+    
+    <!-- خطوط جوجل -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cairo:wght@500;600;700;800;900&family=IBM+Plex+Sans+Arabic:wght@400;500;600;700&family=Plus+Jakarta+Sans:wght@500;600;700;800&family=JetBrains+Mono:wght@500;600;700;800&display=swap">
+
+    <!-- Font Awesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    
+    <!-- نظام التصميم -->
+    <link rel="stylesheet" href="./assets/css/style.css?v=1791927259">
+    
+    <!-- Chart.js -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+
+    <!-- ========================================================================= -->
+    <!-- تخطيط لوحة التحكم للمستخدمين المسجلين                                      -->
+    <!-- ========================================================================= -->
+    <div class="app-layout">
+        
+        <!-- القائمة الجانبية -->
+        <aside class="app-sidebar">
+            <div class="sidebar-header">
+                <a href="./index.php" style="display: flex; align-items: center; gap: 12px; text-decoration: none;">
+                    <div style="width: 38px; height: 38px; border-radius: 12px; background: var(--brand-gradient); display: flex; align-items: center; justify-content: center; box-shadow: 0 4px 14px rgba(91, 79, 232, 0.3);">
+                        <i class="fa-solid fa-network-wired" style="color: #FFF; font-size: 16px;"></i>
+                    </div>
+                    <div>
+                        <strong style="color: #FFFFFF; font-size: 1.15rem; font-family: var(--font-heading); display: block; line-height: 1.1;">NetLearn <span style="color: #A5B4FC;">Pro</span></strong>
+                        <span style="font-size: 0.66rem; color: rgba(6, 182, 212, 0.9); font-weight: 700; font-family: var(--font-mono); letter-spacing: 0.08em;">ADAPTIVE PLATFORM</span>
+                    </div>
+                </a>
+            </div>
+
+            <nav class="sidebar-nav">
+                                    <div class="nav-section-title">المسار الأكاديمي</div>
+                    
+                    <a href="./student/dashboard.php" class="">
+                        <i class="fa-solid fa-chart-pie nav-icon"></i>
+                        <span>لوحة التحكم والتقدم</span>
+                    </a>
+
+                    <a href="./student/placement_test.php" class="">
+                        <i class="fa-solid fa-file-signature nav-icon"></i>
+                        <span>اختبار تحديد المستوى</span>
+                    </a>
+
+                    <a href="./student/study_module.php" class="">
+                        <i class="fa-solid fa-book-open nav-icon"></i>
+                        <span>الدروس التكيفية المدمجة</span>
+                    </a>
+
+                    <div class="nav-section-title">المختبرات والمحاكاة الحية</div>
+
+                    <a href="./student/cisco_cli.php" class="">
+                        <i class="fa-solid fa-terminal nav-icon"></i>
+                        <span>محاكي أوامر سيسكو CLI</span>
+                    </a>
+
+                    <a href="./student/cisco_cheatsheet.php" class="">
+                        <i class="fa-solid fa-book-bookmark nav-icon"></i>
+                        <span>موسوعة أوامر سيسكو Hub</span>
+                    </a>
+
+                    <a href="./student/packet_sniffer.php" class="">
+                        <i class="fa-solid fa-microchip nav-icon"></i>
+                        <span>محلل الحزم (Wireshark Lab)</span>
+                    </a>
+
+                    <a href="./student/subnet_simulator.php" class="">
+                        <i class="fa-solid fa-network-wired nav-icon"></i>
+                        <span>مختبر Subnetting الحي</span>
+                    </a>
+
+                    <a href="./student/vlsm_calculator.php" class="">
+                        <i class="fa-solid fa-calculator nav-icon"></i>
+                        <span>حاسبة تقسيم الشبكات VLSM</span>
+                    </a>
+
+                    <a href="./student/network_topology.php" class="">
+                        <i class="fa-solid fa-diagram-project nav-icon"></i>
+                        <span>محاكي مسار الحزم الحي</span>
+                    </a>
+
+                    <a href="./student/osi_explorer.php" class="">
+                        <i class="fa-solid fa-layer-group nav-icon"></i>
+                        <span>محلل طبقات OSI السبع</span>
+                    </a>
+
+                            </nav>
+
+            <div class="sidebar-footer">
+                <div class="user-profile-badge">
+                    <div class="user-avatar">
+                        أ                    </div>
+                    <div class="user-meta">
+                        <div class="user-meta-name" title="أحمد الشبكات (طالب تجريبي)">
+                            أحمد الشبكات (طالب تجريبي)                        </div>
+                        <div class="user-meta-role">
+                            طالب هندسة شبكات                        </div>
+                    </div>
+                    <a href="./logout.php" title="تسجيل الخروج" style="color: rgba(200, 200, 235, 0.6); font-size: 1.1rem; padding: 4px; transition: color 0.2s;" onmouseover="this.style.color='#F43F5E'" onmouseout="this.style.color='rgba(200, 200, 235, 0.6)'">
+                        <i class="fa-solid fa-arrow-right-from-bracket"></i>
+                    </a>
+                </div>
+            </div>
+        </aside>
+
+        <!-- مساحة العمل الرئيسية -->
+        <div class="app-workspace">
+            <header class="app-topbar">
+                <div class="topbar-breadcrumbs">
+                    <i class="fa-solid fa-house" style="font-size: 0.8rem;"></i>
+                    <span>/</span>
+                    <span>الطالب</span>
+                    <span>/</span>
+                    <strong>المحتوى الأكاديمي والدروس المدمجة</strong>
+                </div>
+
+                <div class="topbar-actions">
+                                            <a href="./student/cisco_cli.php" class="btn btn-secondary btn-sm">
+                            <i class="fa-solid fa-terminal" style="color: var(--brand-secondary);"></i> المحاكي
+                        </a>
+                                        <a href="./student/change_password.php" class="btn btn-secondary btn-sm" title="الإعدادات">
+                        <i class="fa-solid fa-gear"></i>
+                    </a>
+                    <a href="./logout.php" class="btn btn-danger btn-sm">
+                        خروج <i class="fa-solid fa-arrow-right-from-bracket"></i>
+                    </a>
+                </div>
+            </header>
+
+            <main class="app-page-body">
+
+
+<style>
+/* ── حاوية مساحة التعلم التكيفية ── */
+.study-container {
+    max-width: 1240px;
+    margin: 0 auto;
+    padding-bottom: 60px;
+}
+
+/* ── ترويسة الدرس الفاخرة عالية التباين (Nebula Luxe Header) ── */
+.study-header {
+    background: linear-gradient(135deg, #1A1A3E 0%, #2A1758 45%, #0B192C 100%);
+    border: 1.5px solid rgba(139, 92, 246, 0.35);
+    border-radius: var(--radius-xl);
+    padding: 34px 38px;
+    margin-bottom: 24px;
+    position: relative;
+    overflow: hidden;
+    box-shadow: 0 20px 50px -10px rgba(26, 26, 62, 0.35), 0 0 35px rgba(91, 79, 232, 0.15);
+}
+.study-header::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: radial-gradient(circle at 12% 25%, rgba(91, 79, 232, 0.3) 0%, transparent 45%),
+                radial-gradient(circle at 88% 85%, rgba(6, 182, 212, 0.22) 0%, transparent 45%);
+    pointer-events: none;
+}
+.study-header * {
+    position: relative;
+    z-index: 1;
+}
+
+/* فرض التباين الكامل باللون الأبيض على جميع نصوص الترويسة */
+.study-header h1,
+.study-header h2,
+.study-header h3,
+.study-header p,
+.study-header span,
+.study-header strong {
+    color: #FFFFFF !important;
+}
+
+.study-header h1 {
+    font-size: 1.95rem;
+    font-weight: 900;
+    line-height: 1.35;
+    margin: 10px 0 12px;
+    letter-spacing: -0.01em;
+    text-shadow: 0 2px 10px rgba(0, 0, 0, 0.35);
+}
+
+.study-header p {
+    font-size: 0.98rem;
+    line-height: 1.7;
+    opacity: 0.9;
+    max-width: 620px;
+}
+
+/* ── شريط التنقل بين المستويات الأربعة الأنيق (Segmented Control) ── */
+.level-tabs-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 12px;
+    margin-bottom: 24px;
+}
+@media (max-width: 860px) {
+    .level-tabs-grid { grid-template-columns: repeat(2, 1fr); }
+}
+@media (max-width: 480px) {
+    .level-tabs-grid { grid-template-columns: 1fr; }
+}
+
+.level-tab-card {
+    background: var(--bg-surface-card);
+    border: 1.5px solid rgba(208, 213, 229, 0.6);
+    border-radius: var(--radius-lg);
+    padding: 14px 16px;
+    text-decoration: none;
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    position: relative;
+    box-shadow: var(--shadow-subtle);
+}
+.level-tab-card:hover {
+    transform: translateY(-3px);
+    box-shadow: var(--shadow-card);
+    border-color: rgba(91, 79, 232, 0.35);
+}
+.level-tab-card.active {
+    background: #FFFFFF;
+    border-color: var(--brand-primary);
+    box-shadow: 0 8px 24px rgba(91, 79, 232, 0.18);
+}
+.level-tab-card.active::after {
+    content: '';
+    position: absolute;
+    bottom: -1px;
+    left: 20px;
+    right: 20px;
+    height: 3px;
+    background: var(--brand-gradient);
+    border-radius: var(--radius-full);
+}
+
+.level-tab-top {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.level-tab-badge {
+    font-size: 0.74rem;
+    font-weight: 800;
+    padding: 3px 9px;
+    border-radius: var(--radius-full);
+    font-family: var(--font-mono);
+}
+.level-tab-title {
+    font-weight: 800;
+    font-size: 0.95rem;
+    color: var(--text-heading);
+    line-height: 1.35;
+}
+
+/* ── البطاقة التفاعلية الرئيسية للوحدة ── */
+.module-card {
+    background: var(--bg-surface-card);
+    border: 1px solid rgba(208, 213, 229, 0.6);
+    border-radius: var(--radius-xl);
+    margin-bottom: 26px;
+    overflow: hidden;
+    box-shadow: var(--shadow-card);
+    transition: all 0.3s ease;
+}
+
+.module-header {
+    padding: 22px 28px;
+    background: rgba(255, 255, 255, 0.7);
+    border-bottom: 1px solid var(--border-subtle);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 14px;
+}
+
+.module-summary-box {
+    padding: 16px 28px;
+    background: rgba(91, 79, 232, 0.04);
+    border-right: 4px solid var(--brand-primary);
+    border-bottom: 1px solid rgba(208, 213, 229, 0.5);
+    font-size: 0.95rem;
+    color: var(--text-heading);
+    line-height: 1.7;
+}
+
+.module-body-content {
+    padding: 32px 30px;
+}
+
+/* تنسيق المقالات والأقسام الأكاديمية */
+.study-guide-content {
+    line-height: 1.85;
+    font-size: 1.02rem;
+    color: var(--text-body);
+    transition: font-size 0.2s ease;
+}
+.study-guide-content h3 {
+    color: var(--text-heading);
+    font-size: 1.3rem;
+    font-weight: 800;
+    margin: 32px 0 16px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    border-right: 4px solid var(--brand-primary);
+    padding-right: 12px;
+}
+.study-guide-content h4 {
+    color: var(--text-heading);
+    font-size: 1.12rem;
+    font-weight: 700;
+    margin: 20px 0 10px;
+}
+.study-guide-content p {
+    margin-bottom: 16px;
+}
+.study-guide-content ul, .study-guide-content ol {
+    padding-right: 22px;
+    margin-bottom: 18px;
+}
+.study-guide-content li {
+    margin-bottom: 10px;
+}
+
+.callout-box {
+    background: rgba(240, 243, 250, 0.9);
+    border: 1px solid rgba(208, 213, 229, 0.8);
+    border-right: 4px solid #06B6D4;
+    border-radius: var(--radius-md);
+    padding: 20px 22px;
+    margin: 22px 0;
+}
+.callout-box h4 {
+    margin-top: 0;
+    color: #0369A1;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+/* ── المختبر التفاعلي المدمج (In-Lesson Interactive Simulators) ── */
+.interactive-lab-container {
+    background: #FFFFFF;
+    border: 2px solid rgba(91, 79, 232, 0.2);
+    border-radius: var(--radius-xl);
+    padding: 28px;
+    margin: 32px 0;
+    box-shadow: 0 12px 35px -8px rgba(91, 79, 232, 0.1);
+}
+.interactive-lab-title {
+    font-size: 1.22rem;
+    font-weight: 800;
+    color: var(--text-heading);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 18px;
+    padding-bottom: 12px;
+    border-bottom: 1.5px solid var(--border-subtle);
+}
+
+/* أداة OSI التفاعلية (المستوى 1) */
+.osi-layer-row {
+    background: var(--bg-surface-solid);
+    border: 1.5px solid var(--border-main);
+    border-radius: var(--radius-md);
+    padding: 12px 18px;
+    margin-bottom: 10px;
+    cursor: pointer;
+    transition: all 0.25s ease;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.osi-layer-row:hover, .osi-layer-row.active {
+    background: var(--brand-primary-light);
+    border-color: var(--brand-primary);
+    transform: translateX(-4px);
+    box-shadow: 0 4px 14px rgba(91, 79, 232, 0.12);
+}
+.osi-layer-num {
+    width: 32px;
+    height: 32px;
+    border-radius: var(--radius-sm);
+    background: var(--brand-gradient);
+    color: #FFF;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 800;
+    font-family: var(--font-mono);
+}
+.osi-layer-details {
+    display: none;
+    background: #FFFFFF;
+    border: 1px solid var(--brand-primary-border);
+    border-radius: var(--radius-md);
+    padding: 16px 20px;
+    margin-top: -6px;
+    margin-bottom: 12px;
+    font-size: 0.92rem;
+    animation: slideDown 0.3s ease forwards;
+}
+
+/* أداة Subnet Calculator التفاعلية (المستوى 2) */
+.subnet-calc-box {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 16px;
+    background: rgba(244, 246, 251, 0.8);
+    border: 1px solid var(--border-main);
+    border-radius: var(--radius-lg);
+    padding: 22px;
+    margin-top: 14px;
+}
+@media (max-width: 700px) {
+    .subnet-calc-box { grid-template-columns: 1fr; }
+}
+
+.subnet-result-card {
+    background: #FFFFFF;
+    border: 1px solid rgba(208, 213, 229, 0.6);
+    border-radius: var(--radius-md);
+    padding: 14px 18px;
+}
+.subnet-result-label {
+    font-size: 0.78rem;
+    color: var(--text-muted);
+    font-weight: 700;
+    text-transform: uppercase;
+}
+.subnet-result-val {
+    font-family: var(--font-mono);
+    font-size: 1.15rem;
+    font-weight: 800;
+    color: var(--brand-primary);
+    direction: ltr;
+    text-align: left;
+    margin-top: 4px;
+}
+
+/* ── اختبار الفهم السريع (Instant Knowledge Check) ── */
+.quiz-widget {
+    background: radial-gradient(circle at top right, rgba(91, 79, 232, 0.05), transparent 70%),
+                rgba(255, 255, 255, 0.95);
+    border: 2px solid rgba(91, 79, 232, 0.25);
+    border-radius: var(--radius-xl);
+    padding: 30px;
+    margin: 35px 0 20px;
+    box-shadow: 0 15px 40px -10px rgba(91, 79, 232, 0.12);
+}
+.quiz-card-q {
+    background: var(--bg-surface-solid);
+    border: 1.5px solid var(--border-main);
+    border-radius: var(--radius-lg);
+    padding: 20px 24px;
+    margin-bottom: 20px;
+    transition: all 0.25s ease;
+}
+.quiz-opt-btn {
+    display: block;
+    width: 100%;
+    text-align: right;
+    padding: 12px 18px;
+    margin: 8px 0;
+    border-radius: var(--radius-md);
+    border: 1.5px solid var(--border-main);
+    background: #FFFFFF;
+    cursor: pointer;
+    font-size: 0.94rem;
+    font-weight: 600;
+    color: var(--text-heading);
+    transition: all 0.2s ease;
+}
+.quiz-opt-btn:hover {
+    border-color: var(--brand-primary);
+    background: rgba(91, 79, 232, 0.04);
+    transform: translateX(-4px);
+}
+.quiz-opt-btn.correct {
+    background: #ECFDF5 !important;
+    border-color: #10B981 !important;
+    color: #065F46 !important;
+    font-weight: 800;
+}
+.quiz-opt-btn.wrong {
+    background: #FFF1F2 !important;
+    border-color: #F43F5E !important;
+    color: #9F1239 !important;
+}
+.quiz-feedback {
+    display: none;
+    margin-top: 12px;
+    padding: 12px 16px;
+    border-radius: var(--radius-md);
+    font-size: 0.88rem;
+    line-height: 1.6;
+}
+
+/* ── جسور الانتقال للمختبرات الحية ── */
+.lab-shortcuts-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 16px;
+    margin-top: 24px;
+}
+@media (max-width: 650px) {
+    .lab-shortcuts-grid { grid-template-columns: 1fr; }
+}
+.lab-shortcut-item {
+    background: #FFFFFF;
+    border: 1.5px solid rgba(208, 213, 229, 0.7);
+    border-radius: var(--radius-lg);
+    padding: 18px 20px;
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    transition: all 0.3s ease;
+    box-shadow: var(--shadow-subtle);
+}
+.lab-shortcut-item:hover {
+    transform: translateY(-3px);
+    box-shadow: var(--shadow-card-hover);
+    border-color: var(--brand-primary);
+}
+</style>
+
+<div class="study-container">
+
+    <!-- 1. ترويسة المستوى عالية التباين مع عناصر الذكاء الاصطناعي -->
+    <div class="study-header">
+        <div style="display:flex; justify-content:space-between; align-items:flex-start; flex-wrap:wrap; gap:20px;">
+            <div>
+                <div style="display:inline-flex; align-items:center; gap:8px; background:rgba(255,255,255,0.14); backdrop-filter:blur(8px); padding:6px 16px; border-radius:var(--radius-full); font-size:0.82rem; font-weight:800; margin-bottom:12px; border:1px solid rgba(255,255,255,0.2);">
+                    <i class="fa-solid fa-graduation-cap"></i> المسار الأكاديمي التكيفي — المستوى 1                </div>
+
+                <h1>أساسيات نموذج الاتصال المعياري (OSI &amp; Network Fundamentals)</h1>
+
+                <p>
+                    محتوى أكاديمي هندسي مجهز لمعايير Cisco CCNA 200-301. تفاعل مع المحاكيات الحية أدناه، ثم أجب على اختبار الفهم السريع لاجتياز المستوى.
+                </p>
+            </div>
+
+            <div style="display:flex; gap:12px; flex-wrap:wrap; align-items:center;">
+                <!-- زر القراءة الصوتية بالذكاء الاصطناعي -->
+                <button type="button" id="tts-btn" onclick="toggleAudioReader()" class="btn" style="background:rgba(255,255,255,0.12); color:#FFF !important; border:1.5px solid rgba(255,255,255,0.3); font-weight:700; padding:12px 18px; border-radius:var(--radius-md); backdrop-filter:blur(8px);">
+                    <i class="fa-solid fa-volume-high" id="tts-icon"></i> <span id="tts-text">استمع صوتياً</span>
+                </button>
+
+                <!-- زر بدء الاختبار المعتمد -->
+                <a href="exam.php?level_id=1" class="btn" style="background:#FFFFFF; color:#1A1A3E !important; font-weight:900; padding:13px 26px; border-radius:var(--radius-md); box-shadow:0 8px 24px rgba(0,0,0,0.25);">
+                    <i class="fa-solid fa-bolt" style="color:var(--brand-primary);"></i> بدء اختبار المستوى
+                </a>
+            </div>
+        </div>
+
+        <!-- شريط التقدم الأكاديمي الإجمالي -->
+        <div style="margin-top:24px; padding-top:18px; border-top:1px solid rgba(255,255,255,0.15);">
+            <div style="display:flex; justify-content:space-between; font-size:0.85rem; margin-bottom:8px;">
+                <span style="font-weight:700;"><i class="fa-solid fa-chart-line"></i> إجمالي تقدم القراءة بالمنصة</span>
+                <span style="font-family:var(--font-mono); font-weight:800;">100% مكتمل</span>
+            </div>
+            <div class="progress-bar-container" style="background:rgba(255,255,255,0.15); height:8px;">
+                <div class="progress-bar-fill" style="width:100%;"></div>
+            </div>
+        </div>
+    </div>
+
+    <!-- 2. شريط التنقل المتطور بين المستويات الأربعة -->
+    <div class="level-tabs-grid">
+                                <a href="study_module.php?level_id=1" class="level-tab-card active">
+                <div class="level-tab-top">
+                    <span style="font-family:var(--font-mono); font-weight:800; font-size:0.82rem; color:var(--brand-primary);">
+                        LEVEL 1                    </span>
+                                            <span class="level-tab-badge" style="background:#ECFDF5; color:#065F46; border:1px solid #A7F3D0;">
+                            معتمد ✓
+                        </span>
+                                    </div>
+
+                <div class="level-tab-title">
+                    أساسيات نموذج الاتصال المعياري (OSI &amp; Network Fundamentals)                </div>
+            </a>
+                                <a href="study_module.php?level_id=2" class="level-tab-card ">
+                <div class="level-tab-top">
+                    <span style="font-family:var(--font-mono); font-weight:800; font-size:0.82rem; color:var(--brand-primary);">
+                        LEVEL 2                    </span>
+                                            <span class="level-tab-badge" style="background:rgba(208,213,229,0.3); color:var(--text-muted);">
+                            متاح
+                        </span>
+                                    </div>
+
+                <div class="level-tab-title">
+                    العنونة وتقسيم الشبكات الفرعية (IPv4 Addressing &amp; Subnetting)                </div>
+            </a>
+                                <a href="study_module.php?level_id=3" class="level-tab-card ">
+                <div class="level-tab-top">
+                    <span style="font-family:var(--font-mono); font-weight:800; font-size:0.82rem; color:var(--brand-primary);">
+                        LEVEL 3                    </span>
+                                            <span class="level-tab-badge" style="background:rgba(208,213,229,0.3); color:var(--text-muted);">
+                            متاح
+                        </span>
+                                    </div>
+
+                <div class="level-tab-title">
+                    بروتوكولات التوجيه والتبديل (Routing Protocols &amp; Switching)                </div>
+            </a>
+                                <a href="study_module.php?level_id=4" class="level-tab-card ">
+                <div class="level-tab-top">
+                    <span style="font-family:var(--font-mono); font-weight:800; font-size:0.82rem; color:var(--brand-primary);">
+                        LEVEL 4                    </span>
+                                            <span class="level-tab-badge" style="background:rgba(208,213,229,0.3); color:var(--text-muted);">
+                            متاح
+                        </span>
+                                    </div>
+
+                <div class="level-tab-title">
+                    أمن الشبكات والجدران النارية (Network Security &amp; Architecture)                </div>
+            </a>
+            </div>
+
+    <!-- 2.5 شريط أدوات القراءة التفاعلي للمهندس (Reading HUD Bar) -->
+    <div class="reading-hud-bar">
+        <div class="reading-hud-progress-wrap">
+            <span style="font-size:0.84rem; font-weight:700; color:var(--text-heading); display:flex; align-items:center; gap:6px;">
+                <i class="fa-solid fa-book-reader" style="color:var(--brand-primary);"></i> تقدم القراءة:
+            </span>
+            <div class="reading-hud-progress-bar">
+                <div class="reading-hud-progress-fill" id="hud-progress-fill"></div>
+            </div>
+            <span class="reading-hud-pct" id="hud-pct">0%</span>
+        </div>
+
+        <div class="reading-hud-actions">
+            <!-- عداد وقت القراءة -->
+            <div class="hud-btn" style="cursor:default;" title="وقت القراءة المقدر">
+                <i class="fa-regular fa-clock" style="color:var(--brand-primary);"></i>
+                <span>~16 دقيقة</span>
+            </div>
+
+            <!-- التحكم بحجم الخط -->
+            <button type="button" class="hud-btn" onclick="adjustFontSize(-1)" title="تصغير الخط">
+                <i class="fa-solid fa-font"></i>-
+            </button>
+            <button type="button" class="hud-btn" onclick="adjustFontSize(0)" title="الخط الافتراضي">
+                A
+            </button>
+            <button type="button" class="hud-btn" onclick="adjustFontSize(1)" title="تكبير الخط">
+                <i class="fa-solid fa-font"></i>+
+            </button>
+
+            <!-- زر طباعة / ملخص الدرس -->
+            <button type="button" class="hud-btn" onclick="window.print()" title="طباعة أو تصدير ملخص الدرس">
+                <i class="fa-solid fa-print"></i> <span>طباعة الدليل</span>
+            </button>
+
+            <!-- زر الاستماع الصوتي -->
+            <button type="button" class="hud-btn" id="tts-hud-btn" onclick="toggleAudioReader()" title="قراءة صوتية للدرس">
+                <i class="fa-solid fa-volume-high" id="tts-hud-icon"></i> <span id="tts-hud-text">استماع صوتي</span>
+            </button>
+        </div>
+    </div>
+
+    <!-- 3. التوزيع الشبكي المزدوج (Dual-Column LMS Layout) -->
+    <div class="study-layout-grid">
+
+        <!-- العمود الجانبي: الفهرس التفاعلي والملاحة المنهجية (Sticky TOC Sidebar) -->
+        <aside class="study-toc-sidebar">
+            <div class="toc-sidebar-header">
+                <div style="width:36px; height:36px; border-radius:var(--radius-sm); background:var(--brand-primary-light); color:var(--brand-primary); display:flex; align-items:center; justify-content:center; font-size:1.05rem;">
+                    <i class="fa-solid fa-list-check"></i>
+                </div>
+                <div>
+                    <h4 class="toc-sidebar-title">فهرس المحاضرة</h4>
+                    <span style="font-size:0.75rem; color:var(--text-muted);">تنقل سلس ومباشر بين الأقسام</span>
+                </div>
+            </div>
+
+            <ul class="toc-links-list">
+                <li>
+                    <a href="#sec-overview" class="toc-item-link active">
+                        <span class="toc-item-icon"><i class="fa-solid fa-bullseye"></i></span>
+                        <span>أهداف التعلم الهندسية</span>
+                    </a>
+                </li>
+                                    <li>
+                        <a href="#sec-osi-stack" class="toc-item-link">
+                            <span class="toc-item-icon"><i class="fa-solid fa-layer-group"></i></span>
+                            <span>الطبقات السبع (OSI Stack)</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#sec-encapsulation" class="toc-item-link">
+                            <span class="toc-item-icon"><i class="fa-solid fa-box-open"></i></span>
+                            <span>تشريح الحزمة والتغليف</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#sec-domains" class="toc-item-link">
+                            <span class="toc-item-icon"><i class="fa-solid fa-network-wired"></i></span>
+                            <span>مجالات التصادم والبث</span>
+                        </a>
+                    </li>
+                
+                <li>
+                    <a href="#sec-cisco-cli" class="toc-item-link">
+                        <span class="toc-item-icon"><i class="fa-solid fa-terminal"></i></span>
+                        <span>أوامر سيسكو CLI الحقيقية</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="#sec-exam-tips" class="toc-item-link">
+                        <span class="toc-item-icon"><i class="fa-solid fa-lightbulb"></i></span>
+                        <span>نصائح CCNA وبيئات العمل</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="#sec-interactive-lab" class="toc-item-link">
+                        <span class="toc-item-icon"><i class="fa-solid fa-flask"></i></span>
+                        <span>المختبر التفاعلي المدمج</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="#sec-knowledge-check" class="toc-item-link">
+                        <span class="toc-item-icon"><i class="fa-solid fa-bolt"></i></span>
+                        <span>اختبار قياس الاستيعاب</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="#sec-youtube-hub" class="toc-item-link">
+                        <span class="toc-item-icon"><i class="fa-brands fa-youtube"></i></span>
+                        <span>كورسات يوتيوب الموصى بها</span>
+                    </a>
+                </li>
+            </ul>
+
+            <div style="margin-top:20px; padding-top:16px; border-top:1px solid var(--border-subtle); display:flex; flex-direction:column; gap:8px;">
+                <a href="exam.php?level_id=1" class="btn btn-primary btn-sm" style="width:100%; justify-content:center; font-weight:800; padding:10px 14px;">
+                    <i class="fa-solid fa-bolt"></i> خوض اختبار المستوى
+                </a>
+                <a href="dashboard.php" class="btn btn-secondary btn-sm" style="width:100%; justify-content:center; padding:10px 14px;">
+                    <i class="fa-solid fa-house"></i> لوحة التحكم
+                </a>
+            </div>
+        </aside>
+
+        <!-- العمود الرئيسي: المحتوى الدراسي والبطاقات والمختبرات -->
+        <main class="study-main-content">
+                                                <div class="module-card">
+                        
+                        <div class="module-header">
+                            <div style="display:flex; align-items:center; gap:14px;">
+                                <div style="width:44px; height:44px; border-radius:var(--radius-sm); background:var(--brand-gradient); display:flex; align-items:center; justify-content:center; color:#FFF; font-weight:900; font-size:1.1rem; box-shadow:0 4px 14px rgba(91,79,232,0.25);">
+                                    <i class="fa-solid fa-book-open"></i>
+                                </div>
+                                <div>
+                                    <h2 style="font-size:1.3rem; color:var(--text-heading); font-weight:800; margin:0 0 4px;">
+                                        الدليل الشامل لنموذج OSI والطبقات السبع (OSI 7 Layers Complete Architecture)                                    </h2>
+                                    <div style="font-size:0.84rem; color:var(--text-muted); display:flex; align-items:center; gap:12px;">
+                                        <span><i class="fa-solid fa-clock"></i> وقت القراءة المقدر: <strong>16 دقيقة</strong></span>
+                                        <span>•</span>
+                                        <span><i class="fa-solid fa-circle-check" style="color:#10B981;"></i> معتمد لمنهج CCNA</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="module-summary-box">
+                            <strong style="color:var(--brand-primary);"><i class="fa-solid fa-compass"></i> ملخص الوحدة الهندسية:</strong>
+                            شرح معماري وتطبيقي متكامل لجميع الطبقات السبع، ووحدات نقل البيانات (PDU)، وعمليات التغليف (Encapsulation).                        </div>
+
+                        <div class="module-body-content">
+                            <div class="study-guide-content" id="lesson-text-body">
+                                <div class="study-guide-content">
+
+    <!-- شريط بطاقة أهداف التعلم المعتمدة -->
+    <div class="callout-box" id="sec-overview">
+        <h4><i class="fa-solid fa-graduation-cap"></i> أهداف التعلم الهندسية المعتمدة (Cisco CCNA 200-301 Objectives):</h4>
+        <p>
+            1. <strong>المعمارية الهرمية:</strong> فهم التسلسل المعياري للطبقات السبع من الطبقة الفيزيائية وصولاً لطبقة التطبيقات.<br>
+            2. <strong>وحدات نقل البيانات (PDU):</strong> إتقان الفروق بين Bits و Frames و Packets و Segments و Data.<br>
+            3. <strong>التغليف وتدفق البيانات:</strong> تتبع إضافة ترويسات التحكم (Headers) ومقطورات الأخطاء (Trailers) أثناء الإرسال وفكها عند الاستقبال.<br>
+            4. <strong>عزل المجالات:</strong> التمييز الحاسم بين مجالات التصادم (Collision Domains) ومجالات البث (Broadcast Domains).<br>
+            5. <strong>أوامر سيسكو للتحقق:</strong> التعرف على أوامر Cisco IOS الأساسية لفحص حالة المنافذ وعناوين MAC.
+        </p>
+    </div>
+
+    <!-- القسم الأول: الطبقات السبع -->
+    <h3 id="sec-osi-stack"><i class="fa-solid fa-layer-group"></i> 1. المعمارية الهرمية لنموذج الاتصال المعياري (OSI 7 Layers Reference Model)</h3>
+    <p>
+        تم تطوير نموذج <strong>OSI (Open Systems Interconnection)</strong> بواسطة المنظمة الدولية للمعايير (ISO) لتقديم إطار هيكلي موحد يتيح لمختلف مصنعي عتاد وبرمجيات الشبكات التخاطب بمرونة وموثوقية. يتألف النموذج من 7 طبقات هرمية متكاملة، لكل منها وظيفة هندسية محددة ووحدة بيانات خاصة:
+    </p>
+
+    <div class="layers-grid">
+
+        <!-- الطبقة 7 -->
+        <div class="layer-card layer-7">
+            <div class="layer-header">
+                <div class="layer-badge-group">
+                    <span class="layer-num-badge">L7</span>
+                    <div>
+                        <h4 class="layer-title">طبقة التطبيقات (Application Layer)</h4>
+                        <span class="layer-role">الواجهة المباشرة التي يتفاعل معها المستخدم وبرامجه لطلب خدمات الشبكة</span>
+                    </div>
+                </div>
+                <span class="layer-pdu-badge pdu-data">PDU: Data</span>
+            </div>
+            <div class="layer-body">
+                <p>تتيح للبرامج (مثل المتصفحات وعملاء البريد وخوادم الملفات) الوصول إلى موارد الشبكة وتقديم الخدمات للمستخدم النهائي مباشرة.</p>
+                <div class="layer-details-row">
+                    <div class="layer-detail-item">
+                        <strong>الأجهزة العاملة:</strong> الحواسيب، خوادم الويب، الجدران النارية الذكية (NGFW Layer 7).
+                    </div>
+                    <div class="layer-detail-item">
+                        <strong>البروتوكولات الشائعة:</strong>
+                        <div class="tech-chips-list">
+                            <span class="tech-chip">HTTP / HTTPS (80/443)</span>
+                            <span class="tech-chip">DNS (53)</span>
+                            <span class="tech-chip">DHCP (67/68)</span>
+                            <span class="tech-chip">SSH (22)</span>
+                            <span class="tech-chip">FTP (20/21)</span>
+                            <span class="tech-chip">SMTP (25/587)</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- الطبقة 6 -->
+        <div class="layer-card layer-6">
+            <div class="layer-header">
+                <div class="layer-badge-group">
+                    <span class="layer-num-badge">L6</span>
+                    <div>
+                        <h4 class="layer-title">طبقة التقديم (Presentation Layer)</h4>
+                        <span class="layer-role">المترجم التقني: التشفير، الضغط، وترجمة تنسيقات وتوافق البيانات</span>
+                    </div>
+                </div>
+                <span class="layer-pdu-badge pdu-data">PDU: Data</span>
+            </div>
+            <div class="layer-body">
+                <p>تضمن أن البيانات المرسلة من طبقة التطبيقات في جهاز ما يمكن قراءتها وفهمها بواسطة طبقة التطبيقات في جهاز آخر، بغض النظر عن نظام التشغيل أو المعمارية.</p>
+                <div class="layer-details-row">
+                    <div class="layer-detail-item">
+                        <strong>الوظائف الجوهرية:</strong> تشفير البيانات وفك التشفير، ضغط البيانات لتسريع النقل، تحويل الترميز.
+                    </div>
+                    <div class="layer-detail-item">
+                        <strong>المعايير والتنسيقات:</strong>
+                        <div class="tech-chips-list">
+                            <span class="tech-chip">SSL / TLS 1.3</span>
+                            <span class="tech-chip">AES-256</span>
+                            <span class="tech-chip">JSON / XML</span>
+                            <span class="tech-chip">ASCII / Unicode</span>
+                            <span class="tech-chip">JPEG / PNG / MP4</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- الطبقة 5 -->
+        <div class="layer-card layer-5">
+            <div class="layer-header">
+                <div class="layer-badge-group">
+                    <span class="layer-num-badge">L5</span>
+                    <div>
+                        <h4 class="layer-title">طبقة الجلسة (Session Layer)</h4>
+                        <span class="layer-role">إدارة دورة حياة الاتصال: الإنشاء، المزامنة، والتفاوض والإنهاء</span>
+                    </div>
+                </div>
+                <span class="layer-pdu-badge pdu-data">PDU: Data</span>
+            </div>
+            <div class="layer-body">
+                <p>مسؤولة عن تأسيس وحفظ ومزامنة جلسات الحوار بين التطبيقات على طرفي الاتصال، وتحديد وضع الإرسال (Simplex, Half-Duplex, Full-Duplex).</p>
+                <div class="layer-details-row">
+                    <div class="layer-detail-item">
+                        <strong>الآليات الهندسية:</strong> نقاط التفتيش (Checkpoints) لاستئناف النقل عند انقطاع الاتصال دون إعادة إرسال الملف كاملاً.
+                    </div>
+                    <div class="layer-detail-item">
+                        <strong>البروتوكولات:</strong>
+                        <div class="tech-chips-list">
+                            <span class="tech-chip">RPC (Remote Procedure Call)</span>
+                            <span class="tech-chip">NetBIOS</span>
+                            <span class="tech-chip">SIP (Session Initiation)</span>
+                            <span class="tech-chip">Sockets API</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- الطبقة 4 -->
+        <div class="layer-card layer-4">
+            <div class="layer-header">
+                <div class="layer-badge-group">
+                    <span class="layer-num-badge">L4</span>
+                    <div>
+                        <h4 class="layer-title">طبقة النقل (Transport Layer)</h4>
+                        <span class="layer-role">النقل الشامل بين التطبيقات (End-to-End Delivery) والعنونة عبر أرقام المنافذ (Ports)</span>
+                    </div>
+                </div>
+                <span class="layer-pdu-badge pdu-segment">PDU: Segment</span>
+            </div>
+            <div class="layer-body">
+                <p>تتحكم في تدفق البيانات، وإعادة التجميع، واكتشاف الأخطاء، وإعادة الإرسال. تُميز التطبيقات من خلال أرقام المنافذ (Port Numbers: 1 - 65,535).</p>
+                <div class="layer-details-row">
+                    <div class="layer-detail-item">
+                        <strong>مقارنة جوهرية (TCP vs UDP):</strong>
+                        <ul style="margin:4px 0 0; padding-right:18px; font-size:0.92rem;">
+                            <li><strong>TCP:</strong> موثوق، يعتمد على المصافحة الثلاثية (3-Way Handshake: SYN, SYN-ACK, ACK)، وإعادة إرسال الحزم المفقودة، والتحكم بالتدفق (Flow Control عبر Windowing).</li>
+                            <li><strong>UDP:</strong> سريع، خفيف، عديم الاتصال (Best-Effort)، مناسب للصوت والفيديو والبث المباشر وألعاب الفيديو و DNS.</li>
+                        </ul>
+                    </div>
+                    <div class="layer-detail-item">
+                        <strong>البروتوكولات:</strong>
+                        <div class="tech-chips-list">
+                            <span class="tech-chip">TCP (Transmission Control)</span>
+                            <span class="tech-chip">UDP (User Datagram)</span>
+                            <span class="tech-chip">Port Numbers (0–65535)</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- الطبقة 3 -->
+        <div class="layer-card layer-3">
+            <div class="layer-header">
+                <div class="layer-badge-group">
+                    <span class="layer-num-badge">L3</span>
+                    <div>
+                        <h4 class="layer-title">طبقة الشبكة (Network Layer)</h4>
+                        <span class="layer-role">العنونة المنطقية (Logical IP Addressing) وتوجيه المسارات (Routing & Path Selection)</span>
+                    </div>
+                </div>
+                <span class="layer-pdu-badge pdu-packet">PDU: Packet</span>
+            </div>
+            <div class="layer-body">
+                <p>تحدد المسار الأفضل والأنسب لنقل الحزم بين شبكات مختلفة غير متصلة مباشرة، وتستخدم العناوين المنطقية مثل IPv4 و IPv6.</p>
+                <div class="layer-details-row">
+                    <div class="layer-detail-item">
+                        <strong>الأجهزة العاملة:</strong> الموجهات (Routers)، ومبدلات الطبقة الثالثة (Layer 3 Multilayer Switches).
+                    </div>
+                    <div class="layer-detail-item">
+                        <strong>البروتوكولات:</strong>
+                        <div class="tech-chips-list">
+                            <span class="tech-chip">IPv4 (32-bit)</span>
+                            <span class="tech-chip">IPv6 (128-bit)</span>
+                            <span class="tech-chip">ICMP (Ping/Traceroute)</span>
+                            <span class="tech-chip">OSPF / EIGRP / BGP</span>
+                            <span class="tech-chip">IPsec</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- الطبقة 2 -->
+        <div class="layer-card layer-2">
+            <div class="layer-header">
+                <div class="layer-badge-group">
+                    <span class="layer-num-badge">L2</span>
+                    <div>
+                        <h4 class="layer-title">طبقة ربط البيانات (Data Link Layer)</h4>
+                        <span class="layer-role">العنونة الفيزيائية (MAC Addresses)، تأطير الحزم (Framing)، واكتشاف أخطاء الوسط</span>
+                    </div>
+                </div>
+                <span class="layer-pdu-badge pdu-frame">PDU: Frame</span>
+            </div>
+            <div class="layer-body">
+                <p>تنظم كيفية الوصول إلى الوسط الناقل للشبكة الفيزيائية وتتعامل مع العناوين الفيزيائية المضمنة في بطاقات الشبكة (MAC Address: 48-bit). تنقسم إلى طبقتين فرعيتين: LLC (Logical Link Control) و MAC (Media Access Control).</p>
+                <div class="layer-details-row">
+                    <div class="layer-detail-item">
+                        <strong>الأجهزة العاملة:</strong> مبدلات الشبكة (Switches)، الجسور (Bridges)، بطاقات الشبكة (NICs)، نقاط الوصول اللاسلكية (WAPs).
+                    </div>
+                    <div class="layer-detail-item">
+                        <strong>التقنيات والمعايير:</strong>
+                        <div class="tech-chips-list">
+                            <span class="tech-chip">Ethernet (IEEE 802.3)</span>
+                            <span class="tech-chip">Wi-Fi (IEEE 802.11)</span>
+                            <span class="tech-chip">FCS / CRC-32 (Error Check)</span>
+                            <span class="tech-chip">MAC Address (48-bit Hex)</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- الطبقة 1 -->
+        <div class="layer-card layer-1">
+            <div class="layer-header">
+                <div class="layer-badge-group">
+                    <span class="layer-num-badge">L1</span>
+                    <div>
+                        <h4 class="layer-title">الطبقة الفيزيائية (Physical Layer)</h4>
+                        <span class="layer-role">النبض الكهربائي والضوئي: تحويل البتات الرقمية (0 و 1) إلى إشارات وسيطة</span>
+                    </div>
+                </div>
+                <span class="layer-pdu-badge pdu-bits">PDU: Bits</span>
+            </div>
+            <div class="layer-body">
+                <p>تتعامل مع الخصائص الميكانيكية والكهربائية والوظيفية لوسائط الإرسال، وتحدد سرعة نقل البيانات بالبت في الثانية، وأنواع الموصلات والأسلاك وتزامن النبضات.</p>
+                <div class="layer-details-row">
+                    <div class="layer-detail-item">
+                        <strong>الأجهزة والوسائط:</strong> كوابل النحاس الملتوية UTP/STP (Cat5e, Cat6, Cat6a)، كوابل الألياف الضوئية (Single-Mode / Multi-Mode Fiber)، المكررات (Repeaters)، الموزعات القديمة (Hubs).
+                    </div>
+                    <div class="layer-detail-item">
+                        <strong>المعايير والموصلات:</strong>
+                        <div class="tech-chips-list">
+                            <span class="tech-chip">RJ-45 Connector</span>
+                            <span class="tech-chip">LC / SC Fiber Connectors</span>
+                            <span class="tech-chip">SFP / SFP+ Transceivers</span>
+                            <span class="tech-chip">1000BASE-T / 10GBASE-SR</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+    <!-- القسم الثاني: تشريح الحزمة والتغليف -->
+    <h3 id="sec-encapsulation"><i class="fa-solid fa-box-open"></i> 2. تشريح حزمة البيانات وعملية التغليف (Wireshark Packet Anatomy & Encapsulation Flow)</h3>
+    <p>
+        عند إرسال بيانات من جهاز لآخر (مثل طلب صفحة ويب)، تمر البيانات بعملية <strong>التغليف (Encapsulation)</strong> نزولاً من الطبقة 7 إلى 1، حيث تضيف كل طبقة ترويسة تحكم (Header) خاصة بها. وعند وصول الإشارة لجهاز الهدف، تحدث عملية <strong>فك التغليف (De-encapsulation)</strong> صعوداً من 1 إلى 7:
+    </p>
+
+    <!-- محاكي تشريح الحزمة البصري Realistic Packet Anatomy Inspector -->
+    <div class="packet-inspector-container">
+        <div class="packet-inspector-header">
+            <span><i class="fa-solid fa-microchip"></i> تشريح إطار الإيثرنت القياسي (Ethernet II Frame Anatomy)</span>
+            <span class="badge badge-secondary" style="font-family:var(--font-mono);">MTU: 1500 Bytes</span>
+        </div>
+        <div class="packet-frame-visual">
+            <div class="packet-block block-frame" title="Layer 2 Header">
+                <div class="block-title">Ethernet Header (L2)</div>
+                <div class="block-bytes">14 Bytes</div>
+                <div class="block-desc">Dest MAC (6B) + Src MAC (6B) + EtherType 0x0800 (2B)</div>
+            </div>
+            <div class="packet-block block-ip" title="Layer 3 Header">
+                <div class="block-title">IP Header (L3)</div>
+                <div class="block-bytes">20 Bytes</div>
+                <div class="block-desc">Src IP (4B) + Dest IP (4B) + TTL + Protocol 6 (TCP)</div>
+            </div>
+            <div class="packet-block block-tcp" title="Layer 4 Header">
+                <div class="block-title">TCP Header (L4)</div>
+                <div class="block-bytes">20 Bytes</div>
+                <div class="block-desc">Src Port (2B) + Dst Port 443 (2B) + Seq/Ack Num + Flags</div>
+            </div>
+            <div class="packet-block block-payload" title="Layer 7-5 Data Payload">
+                <div class="block-title">Application Data (L7 Payload)</div>
+                <div class="block-bytes">Variable Bytes</div>
+                <div class="block-desc">HTTP/HTTPS Payload: GET /index.html HTTP/1.1</div>
+            </div>
+            <div class="packet-block block-trailer" title="Layer 2 Trailer">
+                <div class="block-title">FCS Trailer (L2)</div>
+                <div class="block-bytes">4 Bytes</div>
+                <div class="block-desc">CRC-32 Checksum لاكتشاف الأخطاء</div>
+            </div>
+        </div>
+
+        <div class="encapsulation-timeline">
+            <div class="timeline-step">
+                <div class="step-circle">1</div>
+                <div class="step-label"><strong>User Data</strong><br><span class="code-font">Layers 7, 6, 5</span></div>
+            </div>
+            <div class="timeline-arrow"><i class="fa-solid fa-arrow-left"></i></div>
+            <div class="timeline-step">
+                <div class="step-circle">2</div>
+                <div class="step-label"><strong>Segment</strong><br><span class="code-font">+ TCP/UDP Header</span></div>
+            </div>
+            <div class="timeline-arrow"><i class="fa-solid fa-arrow-left"></i></div>
+            <div class="timeline-step">
+                <div class="step-circle">3</div>
+                <div class="step-label"><strong>Packet</strong><br><span class="code-font">+ IP Header</span></div>
+            </div>
+            <div class="timeline-arrow"><i class="fa-solid fa-arrow-left"></i></div>
+            <div class="timeline-step">
+                <div class="step-circle">4</div>
+                <div class="step-label"><strong>Frame</strong><br><span class="code-font">+ MAC & FCS Trailer</span></div>
+            </div>
+            <div class="timeline-arrow"><i class="fa-solid fa-arrow-left"></i></div>
+            <div class="timeline-step">
+                <div class="step-circle">5</div>
+                <div class="step-label"><strong>Bits (0101)</strong><br><span class="code-font">Physical Transmission</span></div>
+            </div>
+        </div>
+    </div>
+
+    <!-- القسم الثالث: مقارنة الأجهزة والمجالات -->
+    <h3 id="sec-domains"><i class="fa-solid fa-network-wired"></i> 3. هندسة مجالات التصادم (Collision Domains) ومجالات البث (Broadcast Domains)</h3>
+    <p>
+        من أهم ركائز اختبار CCNA وهندسة الشبكات العملية فهم الفارق بين أجهزة الطبقة 1 و 2 و 3 في التعامل مع تدفق البيانات:
+    </p>
+
+    <table class="academic-table">
+        <thead>
+            <tr>
+                <th>الجهاز (Device)</th>
+                <th>طبقة العمل</th>
+                <th>مجال التصادم (Collision Domain)</th>
+                <th>مجال البث (Broadcast Domain)</th>
+                <th>سلوك معالجة الإشارات</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td><strong>Hub (الموزع القديم)</strong></td>
+                <td><span class="badge badge-secondary">Layer 1</span></td>
+                <td>مجال تصادم واحد مشترك لكافة المنافذ (تصادمات متكررة)</td>
+                <td>مجال بث واحد مشترك لكافة المنافذ</td>
+                <td>يكرر الإشارة كهربائياً لجميع المنافذ دون فحص أي عناوين (Dumb Repeater).</td>
+            </tr>
+            <tr>
+                <td><strong>Switch (المبدل الذكي)</strong></td>
+                <td><span class="badge badge-primary">Layer 2</span></td>
+                <td><strong>كل منفذ يمثل مجال تصادم مستقل تماماً (Micro-segmentation)</strong></td>
+                <td>مجال بث واحد لجميع المنافذ (إلا عند تقسيم VLANs)</td>
+                <td>يتعلم عناوين MAC ديناميكياً ويبني جدول <code>MAC Table</code> ويوجه الإطار للمنفذ المعني فقط.</td>
+            </tr>
+            <tr>
+                <td><strong>Router (الموجه)</strong></td>
+                <td><span class="badge badge-success">Layer 3</span></td>
+                <td>كل منفذ يمثل مجال تصادم مستقل</td>
+                <td><strong>كل منفذ يكسر ويفصل مجالات البث (Breaks Broadcasts)</strong></td>
+                <td>لا يمرر حزم البث العام (Broadcasts) ويختار المسار بناءً على جدول التوجيه <code>Routing Table</code>.</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <!-- القسم الرابع: أوامر سيسكو الحقيقية CLI -->
+    <h3 id="sec-cisco-cli"><i class="fa-solid fa-terminal"></i> 4. موجه أوامر سيسكو الحقيقي (Cisco IOS Verification Commands)</h3>
+    <p>
+        في بيئات العمل والإنتاج الحقيقية، يستخدم مهندس الشبكات هذه الأوامر على أجهزة Cisco Catalyst Switch للتحقق من الطبقات ومنافذ الشبكة:
+    </p>
+
+    <div class="cisco-terminal-box">
+        <div class="terminal-bar">
+            <div class="terminal-dots">
+                <span class="dot-red"></span>
+                <span class="dot-yellow"></span>
+                <span class="dot-green"></span>
+            </div>
+            <div class="terminal-title"><i class="fa-solid fa-terminal"></i> Cisco Catalyst 2960 Switch — IOS CLI Terminal</div>
+            <button type="button" class="cli-copy-btn" onclick="copyTerminalText('cli-block-1')">
+                <i class="fa-regular fa-copy"></i> نسخ الأوامر
+            </button>
+        </div>
+        <pre class="terminal-content" id="cli-block-1"><span class="cli-prompt">Switch#</span> <span class="cli-cmd">show interfaces gigabitEthernet 0/1 status</span>
+Port      Name               Status       Vlan       Duplex  Speed Type
+Gi0/1     Uplink-To-Router   <span class="cli-highlight-green">connected</span>    trunk      <span class="cli-highlight-cyan">a-full</span>  <span class="cli-highlight-cyan">a-1000</span> 10/100/1000BaseTX
+
+<span class="cli-prompt">Switch#</span> <span class="cli-cmd">show mac address-table dynamic</span>
+          Mac Address Table
+-------------------------------------------
+Vlan    Mac Address       Type        Ports
+----    -----------       --------    -----
+   1    <span class="cli-highlight-cyan">0050.7966.6800</span>    DYNAMIC     Gi0/1
+  10    <span class="cli-highlight-cyan">c472.9521.aa01</span>    DYNAMIC     Fa0/2
+  10    <span class="cli-highlight-cyan">c472.9521.aa02</span>    DYNAMIC     Fa0/3
+Total Mac Addresses for this criterion: 3
+
+<span class="cli-prompt">Switch#</span> <span class="cli-cmd">show version | include Model</span>
+Model number                    : WS-C2960-24TT-L</pre>
+    </div>
+
+    <!-- القسم الخامس: نصائح اختبار CCNA وحقائق بيئات العمل -->
+    <h3 id="sec-exam-tips"><i class="fa-solid fa-shield-halved"></i> 5. نصائح اختبار سيسكو CCNA 200-301 وحقائق بيئات الإنتاج</h3>
+
+    <div class="exam-tips-grid">
+        <div class="exam-tip-card">
+            <div class="exam-tip-header">
+                <i class="fa-solid fa-lightbulb" style="color:#F59E0B;"></i>
+                <h4>فخ شهير في اختبار CCNA 200-301</h4>
+            </div>
+            <p>
+                إذا سألك الاختبار: <em>"كم عدد مجالات التصادم ومجالات البث في شبكة تحتوي على Router بمخرجين، متصل بكل مخرج Switch بـ 8 منافذ؟"</em><br>
+                <strong>الإجابة الهندسية:</strong><br>
+                • عدد مجالات البث = <strong>2</strong> (لأن الراوتر يفصل البث وكل منفذ في الراوتر يشكل مجال بث مستقل).<br>
+                • عدد مجالات التصادم = <strong>16</strong> (كل منفذ في السويتش يشكل مجال تصادم مستقل تماماً).
+            </p>
+        </div>
+
+        <div class="production-gotcha-card">
+            <div class="production-gotcha-header">
+                <i class="fa-solid fa-triangle-exclamation" style="color:#E11D48;"></i>
+                <h4>واقع بيئات العمل والشركات (Production Gotcha)</h4>
+            </div>
+            <p>
+                احذر من مشكلة <strong>Duplex Mismatch</strong>! إذا تم ضبط أحد طرفي الكابل على <em>Full-Duplex</em> والطرف الآخر على <em>Half-Duplex</em>، سيعمل الاتصال ظاهرياً ولكن سيحدث هدر كبير للبيانات وتراكم أخطاء <strong>CRC / Late Collisions</strong> عند فحص <code>show interfaces</code>؛ مما يتسبب في بطء فادح للشبكة.
+            </p>
+        </div>
+    </div>
+
+</div>                            </div>
+
+                            <!-- ============================================================= -->
+                            <!-- 4. المختبرات التفاعلية المصغرة بحسب المستوى (Interactive Labs)   -->
+                            <!-- ============================================================= -->
+                            <div id="sec-interactive-lab">
+                                                                    <!-- أداة المستوى 1: مستكشف طبقات OSI السبع التفاعلي -->
+                                    <div class="interactive-lab-container">
+                                        <div class="interactive-lab-title">
+                                            <span><i class="fa-solid fa-layer-group" style="color:var(--brand-primary);"></i> مستكشف طبقات OSI ومحاكي التغليف الحي (Interactive Layer Clicker)</span>
+                                            <span class="badge badge-primary"><i class="fa-solid fa-hand-pointer"></i> انقر على أي طبقة للتفاصيل</span>
+                                        </div>
+
+                                        <p style="font-size:0.92rem; color:var(--text-muted); margin-bottom:18px;">
+                                            انقر على أي من الطبقات السبع لعرض بروتوكولاتها، ووحدة البيانات (PDU)، والجهاز الهندسي العامل بها، أو جرب تشغيل محاكاة التغليف:
+                                        </p>
+
+                                        <div style="display:flex; justify-content:flex-end; margin-bottom:14px;">
+                                            <button type="button" onclick="runEncapsulationDemo()" class="btn btn-secondary btn-sm">
+                                                <i class="fa-solid fa-play" style="color:#10B981;"></i> محاكاة تدفق التغليف (Encapsulation Flow)
+                                            </button>
+                                        </div>
+
+                                        <div id="osi-interactive-list">
+                                            <div class="osi-layer-row" onclick="toggleOsiDetails(7)">
+                                                <div style="display:flex; align-items:center; gap:12px;">
+                                                    <div class="osi-layer-num">7</div>
+                                                    <strong>طبقة التطبيقات (Application Layer)</strong>
+                                                </div>
+                                                <span style="font-family:var(--font-mono); font-size:0.85rem; color:var(--brand-primary);">PDU: Data</span>
+                                            </div>
+                                            <div class="osi-layer-details" id="osi-details-7">
+                                                <strong>الوظيفة:</strong> الواجهة المباشرة للمستخدم والتطبيقات.<br>
+                                                <strong>البروتوكولات:</strong> HTTP, HTTPS, DNS, DHCP, FTP, SSH, SMTP.<br>
+                                                <strong>الأجهزة:</strong> أجهزة الحواسيب، خوادم الويب، الجدران النارية NGFW.
+                                            </div>
+
+                                            <div class="osi-layer-row" onclick="toggleOsiDetails(6)">
+                                                <div style="display:flex; align-items:center; gap:12px;">
+                                                    <div class="osi-layer-num">6</div>
+                                                    <strong>طبقة التقديم (Presentation Layer)</strong>
+                                                </div>
+                                                <span style="font-family:var(--font-mono); font-size:0.85rem; color:var(--brand-primary);">PDU: Data</span>
+                                            </div>
+                                            <div class="osi-layer-details" id="osi-details-6">
+                                                <strong>الوظيفة:</strong> تشفير وضغط وترجمة تنسيقات البيانات وضمان قراءتها.<br>
+                                                <strong>التنسيقات:</strong> SSL/TLS, JPEG, ASCII, MP4, GIF.
+                                            </div>
+
+                                            <div class="osi-layer-row" onclick="toggleOsiDetails(5)">
+                                                <div style="display:flex; align-items:center; gap:12px;">
+                                                    <div class="osi-layer-num">5</div>
+                                                    <strong>طبقة الجلسة (Session Layer)</strong>
+                                                </div>
+                                                <span style="font-family:var(--font-mono); font-size:0.85rem; color:var(--brand-primary);">PDU: Data</span>
+                                            </div>
+                                            <div class="osi-layer-details" id="osi-details-5">
+                                                <strong>الوظيفة:</strong> إدارة ومزامنة وإنهاء جلسات الاتصال والتفاوض بين البرامج.<br>
+                                                <strong>الآليات:</strong> RPC, NetBIOS, Session Checkpoints.
+                                            </div>
+
+                                            <div class="osi-layer-row" onclick="toggleOsiDetails(4)">
+                                                <div style="display:flex; align-items:center; gap:12px;">
+                                                    <div class="osi-layer-num">4</div>
+                                                    <strong>طبقة النقل (Transport Layer)</strong>
+                                                </div>
+                                                <span style="font-family:var(--font-mono); font-size:0.85rem; color:#8B5CF6;">PDU: Segment</span>
+                                            </div>
+                                            <div class="osi-layer-details" id="osi-details-4">
+                                                <strong>الوظيفة:</strong> نقل البيانات من طرف لطرف مع التحكم بالتدفق وإعادة الإرسال.<br>
+                                                <strong>البروتوكولات:</strong> TCP (الموثوق عبر 3-Way Handshake) و UDP (السريع بدون اتصال).<br>
+                                                <strong>العنونة:</strong> أرقام المنافذ (Port Numbers: 80, 443, 53...).
+                                            </div>
+
+                                            <div class="osi-layer-row" onclick="toggleOsiDetails(3)">
+                                                <div style="display:flex; align-items:center; gap:12px;">
+                                                    <div class="osi-layer-num">3</div>
+                                                    <strong>طبقة الشبكة (Network Layer)</strong>
+                                                </div>
+                                                <span style="font-family:var(--font-mono); font-size:0.85rem; color:#06B6D4;">PDU: Packet</span>
+                                            </div>
+                                            <div class="osi-layer-details" id="osi-details-3">
+                                                <strong>الوظيفة:</strong> التوجيه المنطقي واختيار أفضل مسار لحزم البيانات عبر الشبكات.<br>
+                                                <strong>البروتوكولات:</strong> IPv4, IPv6, ICMP, OSPF, BGP.<br>
+                                                <strong>الأجهزة:</strong> جهاز الراوتر (Router)، ومبدلات الطبقة الثالثة (Layer 3 Switch).
+                                            </div>
+
+                                            <div class="osi-layer-row" onclick="toggleOsiDetails(2)">
+                                                <div style="display:flex; align-items:center; gap:12px;">
+                                                    <div class="osi-layer-num">2</div>
+                                                    <strong>طبقة ربط البيانات (Data Link Layer)</strong>
+                                                </div>
+                                                <span style="font-family:var(--font-mono); font-size:0.85rem; color:#10B981;">PDU: Frame</span>
+                                            </div>
+                                            <div class="osi-layer-details" id="osi-details-2">
+                                                <strong>الوظيفة:</strong> العنونة الفيزيائية واكتشاف أخطاء الإرسال عبر حقل الـ FCS.<br>
+                                                <strong>البروتوكولات:</strong> Ethernet (802.3), Wi-Fi (802.11), PPP, ARP.<br>
+                                                <strong>الأجهزة:</strong> المبدل (Switch)، وبطاقة الشبكة (NIC)، وجدول عناوين الـ MAC.
+                                            </div>
+
+                                            <div class="osi-layer-row" onclick="toggleOsiDetails(1)">
+                                                <div style="display:flex; align-items:center; gap:12px;">
+                                                    <div class="osi-layer-num">1</div>
+                                                    <strong>الطبقة الفيزيائية (Physical Layer)</strong>
+                                                </div>
+                                                <span style="font-family:var(--font-mono); font-size:0.85rem; color:#F59E0B;">PDU: Bits</span>
+                                            </div>
+                                            <div class="osi-layer-details" id="osi-details-1">
+                                                <strong>الوظيفة:</strong> تحويل الإشارات إلى نبضات كهربائية أو ضوئية أو موجات لاسلكية.<br>
+                                                <strong>الوسائط والأجهزة:</strong> كابلات UTP/STP, كابلات الألياف الضوئية (Fiber), الموزع القديم (Hub).
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                                            </div>
+
+                            <!-- ============================================================= -->
+                            <!-- 5. اختبار قياس الاستيعاب الفوري (Instant Knowledge Check)       -->
+                            <!-- ============================================================= -->
+                            <div class="quiz-widget" id="sec-knowledge-check">
+                                <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:16px;">
+                                    <div>
+                                        <span class="badge badge-warning" style="margin-bottom:6px;">
+                                            <i class="fa-solid fa-bolt"></i> التقييم اللحظي الذكي
+                                        </span>
+                                        <h3 style="margin:0; font-size:1.25rem; color:var(--text-heading); font-weight:800;">
+                                            اختبار قياس الاستيعاب السريع (Knowledge Check)
+                                        </h3>
+                                    </div>
+                                    <div style="text-align:left;">
+                                        <div style="font-size:0.8rem; color:var(--text-muted); font-weight:700;">نقاط الاستيعاب</div>
+                                        <div id="quiz-score-badge" style="font-family:var(--font-mono); font-weight:900; font-size:1.3rem; color:var(--brand-primary);">
+                                            0 / 3
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <p style="font-size:0.92rem; color:var(--text-muted); margin-bottom:22px;">
+                                    أجب على الأسئلة الثلاثة التالية للتحقق الفوري من استيعابك للمفاهيم قبل خوض الاختبار المعتمد:
+                                </p>
+
+                                                                    <!-- أسئلة المستوى 1 -->
+                                    <div class="quiz-card-q" id="qc-1">
+                                        <div style="font-weight:700; color:var(--text-heading); margin-bottom:10px;">
+                                            1. ما هي وحدة البيانات (PDU) الخاصة بطبقة النقل (Transport Layer)؟
+                                        </div>
+                                        <button type="button" class="quiz-opt-btn" onclick="checkAnswer(1, 'A', false, 'خطأ: Packet هي وحدة البيانات لطبقة الشبكة (Layer 3).')">A) Packet (الحزمة)</button>
+                                        <button type="button" class="quiz-opt-btn" onclick="checkAnswer(1, 'B', true, 'صحيح 100%! في طبقة النقل تسمى وحدة البيانات Segment.')">B) Segment (المقطع)</button>
+                                        <button type="button" class="quiz-opt-btn" onclick="checkAnswer(1, 'C', false, 'خطأ: Frame هي وحدة البيانات لطبقة ربط البيانات (Layer 2).')">C) Frame (الإطار)</button>
+                                        <div class="quiz-feedback" id="qfb-1"></div>
+                                    </div>
+
+                                    <div class="quiz-card-q" id="qc-2">
+                                        <div style="font-weight:700; color:var(--text-heading); margin-bottom:10px;">
+                                            2. ما الذي يميز منافذ المبدل (Switch) مقارنة بالموزع القديم (Hub)؟
+                                        </div>
+                                        <button type="button" class="quiz-opt-btn" onclick="checkAnswer(2, 'A', true, 'صحيح تماماً! يوفر المبدل مجال تصادم (Collision Domain) مستقل لكل منفذ من منافذه.')">A) يفصل مجالات التصادم لكل منفذ</button>
+                                        <button type="button" class="quiz-opt-btn" onclick="checkAnswer(2, 'B', false, 'خطأ: المبدل يمرر رسائل البث العام Broadcast لجميع المنافذ افتراضياً.')">B) يفصل مجالات البث العام تلقائياً</button>
+                                        <button type="button" class="quiz-opt-btn" onclick="checkAnswer(2, 'C', false, 'خطأ: المبدل يعمل في الطبقة الثانية بينما Hub في الطبقة الأولى.')">C) يعمل في الطبقة الفيزيائية فقط</button>
+                                        <div class="quiz-feedback" id="qfb-2"></div>
+                                    </div>
+
+                                    <div class="quiz-card-q" id="qc-3">
+                                        <div style="font-weight:700; color:var(--text-heading); margin-bottom:10px;">
+                                            3. ما هو بروتوكول المصافحة الثلاثية المسؤول عن النقل الموثوق للبيانات؟
+                                        </div>
+                                        <button type="button" class="quiz-opt-btn" onclick="checkAnswer(3, 'A', false, 'خطأ: بروتوكول UDP غير موثوق ولا ينفذ مصافحة ثلاثية.')">A) بروتوكول UDP</button>
+                                        <button type="button" class="quiz-opt-btn" onclick="checkAnswer(3, 'B', true, 'صحيح! بروتوكول TCP يعتمد على المصافحة الثلاثية (SYN, SYN-ACK, ACK) لضمان تسليم البيانات.')">B) بروتوكول TCP</button>
+                                        <button type="button" class="quiz-opt-btn" onclick="checkAnswer(3, 'C', false, 'خطأ: ICMP بروتوكول تشخيصي (مثل Ping) ولا يدير تدفق البيانات.')">C) بروتوكول ICMP</button>
+                                        <div class="quiz-feedback" id="qfb-3"></div>
+                                    </div>
+
+                                
+                                <div id="quiz-congrats-box" style="display:none; text-align:center; padding:20px; background:#ECFDF5; border:1.5px solid #A7F3D0; border-radius:var(--radius-lg); margin-top:20px;">
+                                    <div style="font-size:1.8rem; color:#10B981; margin-bottom:6px;"><i class="fa-solid fa-award"></i></div>
+                                    <h4 style="margin:0 0 6px; color:#065F46; font-weight:800;">ممتاز! استوعبت كافة مفاهيم هذا المستوى بنجاح</h4>
+                                    <p style="color:#047857; font-size:0.92rem; margin-bottom:14px;">أنت الآن مؤهل تماماً لخوض الاختبار الرسمي المعتمد واعتماد المستوى في سجلك الأكاديمي.</p>
+                                    <a href="exam.php?level_id=1" class="btn btn-primary" style="font-weight:800; padding:12px 28px;">
+                                        <i class="fa-solid fa-play"></i> خوض الاختبار المعتمد الآن
+                                    </a>
+                                </div>
+                            </div>
+
+                            <!-- ============================================================= -->
+                            <!-- 6. جسور التطبيق العملي والمختبرات الحية (Lab Shortcuts)        -->
+                            <!-- ============================================================= -->
+                            <div style="margin-top:36px;" id="sec-lab-shortcuts">
+                                <h4 style="font-size:1.15rem; font-weight:800; color:var(--text-heading); margin-bottom:14px; display:flex; align-items:center; gap:8px;">
+                                    <i class="fa-solid fa-flask" style="color:var(--brand-primary);"></i> المختبرات التفاعلية المرتبطة بهذا الدرس:
+                                </h4>
+
+                                <div class="lab-shortcuts-grid">
+                                                                            <a href="osi_explorer.php" class="lab-shortcut-item">
+                                            <div style="width:44px; height:44px; border-radius:var(--radius-sm); background:rgba(91,79,232,0.1); color:var(--brand-primary); display:flex; align-items:center; justify-content:center; font-size:1.2rem;">
+                                                <i class="fa-solid fa-layer-group"></i>
+                                            </div>
+                                            <div>
+                                                <div style="font-weight:800; color:var(--text-heading); font-size:0.96rem;">محلل طبقات OSI السبع</div>
+                                                <div style="font-size:0.8rem; color:var(--text-muted);">محاكاة تدفق الحزم والتغليف عبر الطبقات</div>
+                                            </div>
+                                        </a>
+                                        <a href="packet_sniffer.php" class="lab-shortcut-item">
+                                            <div style="width:44px; height:44px; border-radius:var(--radius-sm); background:rgba(6,182,212,0.1); color:#06B6D4; display:flex; align-items:center; justify-content:center; font-size:1.2rem;">
+                                                <i class="fa-solid fa-microchip"></i>
+                                            </div>
+                                            <div>
+                                                <div style="font-weight:800; color:var(--text-heading); font-size:0.96rem;">محلل الحزم (Wireshark Lab)</div>
+                                                <div style="font-size:0.8rem; color:var(--text-muted);">فحص حزم HTTP و DNS والـ Handshake الحية</div>
+                                            </div>
+                                        </a>
+                                                                    </div>
+                            </div>
+
+                        </div>
+                    </div>
+                                    </main>
+
+    </div> <!-- نهاية التوزيع الشبكي المزدوج .study-layout-grid -->
+
+    <!-- 6.5 مسار الكورسات المرئية المقترح لهذا المستوى (YouTube Adaptive Hub) -->
+    <div id="sec-youtube-hub" style="margin-top:20px;">
+        
+        <style>
+        /* ── نمط بطاقات الفيديو التفاعلية (Video Hub Cards) ── */
+        .video-hub-section {
+            background: #FFFFFF;
+            border: 2px solid rgba(91, 79, 232, 0.22);
+            border-radius: var(--radius-xl);
+            padding: 34px 30px;
+            margin: 32px 0 24px;
+            box-shadow: 0 16px 45px -10px rgba(91, 79, 232, 0.12);
+            position: relative;
+            overflow: hidden;
+        }
+        .video-hub-section::before {
+            content: '';
+            position: absolute;
+            top: 0; right: 0; width: 300px; height: 300px;
+            background: radial-gradient(circle, rgba(91, 79, 232, 0.08) 0%, transparent 70%);
+            pointer-events: none;
+        }
+
+        .video-hub-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            flex-wrap: wrap;
+            gap: 16px;
+            margin-bottom: 22px;
+            padding-bottom: 18px;
+            border-bottom: 1.5px solid var(--border-subtle);
+        }
+
+        .video-hub-title {
+            font-size: 1.35rem;
+            font-weight: 900;
+            color: var(--text-heading);
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            margin: 0 0 6px;
+        }
+
+        .video-filter-bar {
+            display: flex;
+            gap: 8px;
+            flex-wrap: wrap;
+            margin-bottom: 20px;
+        }
+        .video-filter-btn {
+            padding: 7px 16px;
+            border-radius: var(--radius-full);
+            font-size: 0.82rem;
+            font-weight: 700;
+            border: 1px solid var(--border-main);
+            background: var(--bg-surface-solid);
+            color: var(--text-muted);
+            cursor: pointer;
+            transition: all 0.25s ease;
+        }
+        .video-filter-btn:hover {
+            color: var(--brand-primary);
+            border-color: var(--brand-primary-border);
+        }
+        .video-filter-btn.active {
+            background: var(--brand-gradient);
+            color: #FFFFFF !important;
+            border-color: transparent;
+            box-shadow: 0 4px 12px rgba(91, 79, 232, 0.25);
+        }
+
+        .video-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+            gap: 20px;
+        }
+
+        .video-card {
+            background: var(--bg-surface-card);
+            border: 1.5px solid rgba(208, 213, 229, 0.65);
+            border-radius: var(--radius-lg);
+            overflow: hidden;
+            display: flex;
+            flex-direction: column;
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            position: relative;
+            box-shadow: var(--shadow-subtle);
+        }
+        .video-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 18px 40px -12px rgba(26, 26, 62, 0.16);
+            border-color: rgba(91, 79, 232, 0.4);
+        }
+
+        .video-thumb-wrap {
+            position: relative;
+            width: 100%;
+            height: 165px;
+            background: #0F172A;
+            overflow: hidden;
+            cursor: pointer;
+        }
+        .video-thumb-img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.4s ease;
+        }
+        .video-card:hover .video-thumb-img {
+            transform: scale(1.08);
+            filter: brightness(0.85);
+        }
+
+        .video-play-overlay {
+            position: absolute;
+            inset: 0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: rgba(15, 23, 42, 0.35);
+            transition: background 0.3s ease;
+        }
+        .video-card:hover .video-play-overlay {
+            background: rgba(15, 23, 42, 0.55);
+        }
+        .video-play-btn {
+            width: 52px;
+            height: 52px;
+            border-radius: 50%;
+            background: rgba(239, 68, 68, 0.95);
+            color: #FFFFFF;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.25rem;
+            box-shadow: 0 8px 24px rgba(239, 68, 68, 0.5);
+            transition: transform 0.3s ease, background 0.3s ease;
+        }
+        .video-card:hover .video-play-btn {
+            transform: scale(1.15);
+            background: #EF4444;
+        }
+
+        .video-duration-pill {
+            position: absolute;
+            bottom: 10px;
+            left: 10px;
+            background: rgba(15, 23, 42, 0.88);
+            color: #FFFFFF;
+            font-family: var(--font-mono);
+            font-size: 0.74rem;
+            font-weight: 700;
+            padding: 3px 8px;
+            border-radius: var(--radius-sm);
+            backdrop-filter: blur(4px);
+        }
+
+        .video-card-body {
+            padding: 18px;
+            display: flex;
+            flex-direction: column;
+            flex: 1;
+        }
+
+        .video-badge-tag {
+            display: inline-block;
+            font-size: 0.72rem;
+            font-weight: 800;
+            padding: 3px 10px;
+            border-radius: var(--radius-full);
+            margin-bottom: 8px;
+            align-self: flex-start;
+        }
+        .video-badge-tag.highlight {
+            background: #FEF3C7;
+            color: #92400E;
+            border: 1px solid #FDE68A;
+        }
+        .video-badge-tag.playlist {
+            background: #EEEDFF;
+            color: var(--brand-primary);
+            border: 1px solid var(--brand-primary-border);
+        }
+        .video-badge-tag.lab {
+            background: #ECFDF5;
+            color: #065F46;
+            border: 1px solid #A7F3D0;
+        }
+
+        .video-card-title {
+            font-size: 0.98rem;
+            font-weight: 800;
+            color: var(--text-heading);
+            line-height: 1.45;
+            margin: 0 0 8px;
+            display: -webkit-box;
+            -webkit-line-clamp: 2;
+            -webkit-box-orient: vertical;
+            overflow: hidden;
+        }
+
+        .video-card-instructor {
+            font-size: 0.82rem;
+            color: var(--text-muted);
+            font-weight: 600;
+            margin-bottom: 10px;
+            display: flex;
+            align-items: center;
+            gap: 6px;
+        }
+
+        .video-card-desc {
+            font-size: 0.84rem;
+            color: var(--text-body);
+            line-height: 1.55;
+            margin-bottom: 16px;
+            flex: 1;
+            display: -webkit-box;
+            -webkit-line-clamp: 2;
+            -webkit-box-orient: vertical;
+            overflow: hidden;
+        }
+
+        .video-card-actions {
+            display: flex;
+            gap: 8px;
+            margin-top: auto;
+        }
+
+        /* ── مشغل الفيديو المنبثق التفاعلي (Interactive Modal Player) ── */
+        .video-modal-backdrop {
+            display: none;
+            position: fixed;
+            inset: 0;
+            background: rgba(15, 23, 42, 0.85);
+            backdrop-filter: blur(12px);
+            z-index: 9999;
+            align-items: center;
+            justify-content: center;
+            padding: 20px;
+            animation: fadeIn 0.3s ease forwards;
+        }
+        .video-modal-window {
+            background: #0F172A;
+            border: 1.5px solid rgba(139, 92, 246, 0.35);
+            border-radius: var(--radius-xl);
+            width: 100%;
+            max-width: 900px;
+            overflow: hidden;
+            box-shadow: 0 25px 70px rgba(0, 0, 0, 0.6);
+            display: flex;
+            flex-direction: column;
+            animation: scaleUp 0.3s ease forwards;
+        }
+        .video-modal-header {
+            padding: 16px 22px;
+            background: #1E293B;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+        }
+        .video-modal-title {
+            color: #FFFFFF;
+            font-size: 1.05rem;
+            font-weight: 800;
+            margin: 0;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        .video-modal-close {
+            background: none;
+            border: none;
+            color: #94A3B8;
+            font-size: 1.4rem;
+            cursor: pointer;
+            padding: 4px;
+            transition: color 0.2s ease;
+        }
+        .video-modal-close:hover {
+            color: #EF4444;
+        }
+        .video-modal-iframe-box {
+            position: relative;
+            padding-bottom: 56.25%; /* 16:9 Aspect Ratio */
+            height: 0;
+            background: #000000;
+        }
+        .video-modal-iframe-box iframe {
+            position: absolute;
+            top: 0; left: 0; width: 100%; height: 100%;
+            border: none;
+        }
+        .video-modal-footer {
+            padding: 14px 22px;
+            background: #1E293B;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 10px;
+        }
+
+        @keyframes scaleUp {
+            from { transform: scale(0.92); opacity: 0; }
+            to { transform: scale(1); opacity: 1; }
+        }
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+        </style>
+
+        <section class="video-hub-section" id="adaptive-video-hub">
+            <div class="video-hub-header">
+                <div>
+                    <div style="display:inline-flex; align-items:center; gap:8px; background:rgba(91,79,232,0.08); padding:5px 14px; border-radius:var(--radius-full); font-size:0.8rem; font-weight:800; color:var(--brand-primary); margin-bottom:10px;">
+                        <i class="fa-solid fa-wand-magic-sparkles"></i> خوارزمية التوصية المرئية التكيفية (YouTube Edu AI)
+                    </div>
+                    <h2 class="video-hub-title">
+                        <i class="fa-brands fa-youtube" style="color:#EF4444; font-size:1.6rem;"></i>
+                        شروحات وسلاسل يوتيوب المقترحة لدراسة «أساسيات نموذج الاتصال المعياري (OSI &amp;amp; Network Fundamentals)»                    </h2>
+                    <p style="color:var(--text-muted); font-size:0.94rem; margin:0; line-height:1.6;">
+                        اخترنا لك نخبة من أفضل شروحات الفيديو التفاعلية وقوائم التشغيل لشرح وتطبيق مواضيع هذا المستوى خطوة بخطوة:                    </p>
+                </div>
+
+                <span class="badge badge-primary" style="font-size:0.85rem; padding:8px 16px;">
+                    <i class="fa-solid fa-layer-group"></i> 4 موارد معتمدة
+                </span>
+            </div>
+
+            <!-- أزرار التصفية الفورية -->
+            <div class="video-filter-bar">
+                <button type="button" class="video-filter-btn active" onclick="filterVideoCards('all')">
+                    <i class="fa-solid fa-border-all"></i> جميع المقترحات (4)
+                </button>
+                <button type="button" class="video-filter-btn" onclick="filterVideoCards('targeted_video')">
+                    <i class="fa-solid fa-bolt" style="color:#F59E0B;"></i> فيديوهات التقوية المركزة
+                </button>
+                <button type="button" class="video-filter-btn" onclick="filterVideoCards('full_playlist')">
+                    <i class="fa-solid fa-list-check" style="color:var(--brand-primary);"></i> سلاسل وقوائم كاملة Playlist
+                </button>
+                <button type="button" class="video-filter-btn" onclick="filterVideoCards('hands_on_lab')">
+                    <i class="fa-solid fa-flask" style="color:#10B981;"></i> مختبرات عملية Packet Tracer
+                </button>
+            </div>
+
+            <!-- شبكة بطاقات الكورسات -->
+            <div class="video-grid" id="video-cards-grid">
+                                                        <div class="video-card" data-type="targeted_video">
+                        
+                        <!-- Thumbnail مع زر التشغيل المباشر -->
+                        <div class="video-thumb-wrap" onclick="openVideoModal('vv4y_uOneC0', 'الدليل العملي لفهم طبقات OSI السبع وتدفق البيانات (OSI Model Explained)', 'https://www.youtube.com/watch?v=vv4y_uOneC0')">
+                            <img src="https://img.youtube.com/vi/vv4y_uOneC0/hqdefault.jpg" alt="الدليل العملي لفهم طبقات OSI السبع وتدفق البيانات (OSI Model Explained)" class="video-thumb-img" onerror="this.src='https://images.unsplash.com/photo-1544197150-b99a580bb7a8?w=500&auto=format&fit=crop';">
+                            <div class="video-play-overlay">
+                                <div class="video-play-btn">
+                                    <i class="fa-solid fa-play"></i>
+                                </div>
+                            </div>
+                            <span class="video-duration-pill">
+                                <i class="fa-solid fa-clock"></i> 24 دقيقة                            </span>
+                        </div>
+
+                        <!-- المحتوى -->
+                        <div class="video-card-body">
+                            <span class="video-badge-tag lab">
+                                مرشح لتقوية الضعف ⚡                            </span>
+
+                            <h3 class="video-card-title" title="الدليل العملي لفهم طبقات OSI السبع وتدفق البيانات (OSI Model Explained)">
+                                الدليل العملي لفهم طبقات OSI السبع وتدفق البيانات (OSI Model Explained)                            </h3>
+
+                            <div class="video-card-instructor">
+                                <i class="fa-solid fa-chalkboard-user" style="color:var(--brand-primary);"></i>
+                                FreeCodeCamp &amp; Tech Arabic                            </div>
+
+                            <p class="video-card-desc">
+                                تفكيك بصري ثلاثي الأبعاد لكيفية انتقال البيانات بين الطبقات ووحدات PDU والمنافذ.                            </p>
+
+                            <div class="video-card-actions">
+                                <button type="button" onclick="openVideoModal('vv4y_uOneC0', 'الدليل العملي لفهم طبقات OSI السبع وتدفق البيانات (OSI Model Explained)', 'https://www.youtube.com/watch?v=vv4y_uOneC0')" class="btn btn-primary btn-sm" style="flex:2; font-weight:700;">
+                                    <i class="fa-solid fa-play"></i> مشاهدة تفاعلية
+                                </button>
+                                
+                                                                    <a href="https://www.youtube.com/watch?v=vv4y_uOneC0" target="_blank" rel="noopener noreferrer" class="btn btn-secondary btn-sm" title="فتح على يوتيوب" style="flex:1;">
+                                        <i class="fa-brands fa-youtube" style="color:#EF4444;"></i> يوتيوب
+                                    </a>
+                                                            </div>
+                        </div>
+
+                    </div>
+                                                        <div class="video-card" data-type="targeted_video">
+                        
+                        <!-- Thumbnail مع زر التشغيل المباشر -->
+                        <div class="video-thumb-wrap" onclick="openVideoModal('i5Uv4dK5m7Y', 'كيف يعمل اتصال TCP؟ شرح المصافحة الثلاثية عملياً عبر Wireshark', 'https://www.youtube.com/watch?v=i5Uv4dK5m7Y')">
+                            <img src="https://img.youtube.com/vi/i5Uv4dK5m7Y/hqdefault.jpg" alt="كيف يعمل اتصال TCP؟ شرح المصافحة الثلاثية عملياً عبر Wireshark" class="video-thumb-img" onerror="this.src='https://images.unsplash.com/photo-1544197150-b99a580bb7a8?w=500&auto=format&fit=crop';">
+                            <div class="video-play-overlay">
+                                <div class="video-play-btn">
+                                    <i class="fa-solid fa-play"></i>
+                                </div>
+                            </div>
+                            <span class="video-duration-pill">
+                                <i class="fa-solid fa-clock"></i> 18 دقيقة                            </span>
+                        </div>
+
+                        <!-- المحتوى -->
+                        <div class="video-card-body">
+                            <span class="video-badge-tag lab">
+                                تطبيقي مباشر 🛠️                            </span>
+
+                            <h3 class="video-card-title" title="كيف يعمل اتصال TCP؟ شرح المصافحة الثلاثية عملياً عبر Wireshark">
+                                كيف يعمل اتصال TCP؟ شرح المصافحة الثلاثية عملياً عبر Wireshark                            </h3>
+
+                            <div class="video-card-instructor">
+                                <i class="fa-solid fa-chalkboard-user" style="color:var(--brand-primary);"></i>
+                                NetworkChuck Arabic / Tech Simplified                            </div>
+
+                            <p class="video-card-desc">
+                                التقاط حزم SYN و SYN-ACK و ACK عملياً وفحص ترويسة الحزمة خطوة بخطوة.                            </p>
+
+                            <div class="video-card-actions">
+                                <button type="button" onclick="openVideoModal('i5Uv4dK5m7Y', 'كيف يعمل اتصال TCP؟ شرح المصافحة الثلاثية عملياً عبر Wireshark', 'https://www.youtube.com/watch?v=i5Uv4dK5m7Y')" class="btn btn-primary btn-sm" style="flex:2; font-weight:700;">
+                                    <i class="fa-solid fa-play"></i> مشاهدة تفاعلية
+                                </button>
+                                
+                                                                    <a href="https://www.youtube.com/watch?v=i5Uv4dK5m7Y" target="_blank" rel="noopener noreferrer" class="btn btn-secondary btn-sm" title="فتح على يوتيوب" style="flex:1;">
+                                        <i class="fa-brands fa-youtube" style="color:#EF4444;"></i> يوتيوب
+                                    </a>
+                                                            </div>
+                        </div>
+
+                    </div>
+                                                        <div class="video-card" data-type="targeted_video">
+                        
+                        <!-- Thumbnail مع زر التشغيل المباشر -->
+                        <div class="video-thumb-wrap" onclick="openVideoModal('NMPX5U8v4A8', 'الفرق الجوهري بين Hub و Switch و Router ومجالات البث والتصادم', 'https://www.youtube.com/watch?v=NMPX5U8v4A8')">
+                            <img src="https://img.youtube.com/vi/NMPX5U8v4A8/hqdefault.jpg" alt="الفرق الجوهري بين Hub و Switch و Router ومجالات البث والتصادم" class="video-thumb-img" onerror="this.src='https://images.unsplash.com/photo-1544197150-b99a580bb7a8?w=500&auto=format&fit=crop';">
+                            <div class="video-play-overlay">
+                                <div class="video-play-btn">
+                                    <i class="fa-solid fa-play"></i>
+                                </div>
+                            </div>
+                            <span class="video-duration-pill">
+                                <i class="fa-solid fa-clock"></i> 16 دقيقة                            </span>
+                        </div>
+
+                        <!-- المحتوى -->
+                        <div class="video-card-body">
+                            <span class="video-badge-tag lab">
+                                مفاهيم معمارية أساسية 💡                            </span>
+
+                            <h3 class="video-card-title" title="الفرق الجوهري بين Hub و Switch و Router ومجالات البث والتصادم">
+                                الفرق الجوهري بين Hub و Switch و Router ومجالات البث والتصادم                            </h3>
+
+                            <div class="video-card-instructor">
+                                <i class="fa-solid fa-chalkboard-user" style="color:var(--brand-primary);"></i>
+                                Cisco Certified Arabic                            </div>
+
+                            <p class="video-card-desc">
+                                فهم كيف يفصل المبدل مجالات التصادم، ولماذا الراوتر هو الوحيد الذي يفصل مجالات البث العام.                            </p>
+
+                            <div class="video-card-actions">
+                                <button type="button" onclick="openVideoModal('NMPX5U8v4A8', 'الفرق الجوهري بين Hub و Switch و Router ومجالات البث والتصادم', 'https://www.youtube.com/watch?v=NMPX5U8v4A8')" class="btn btn-primary btn-sm" style="flex:2; font-weight:700;">
+                                    <i class="fa-solid fa-play"></i> مشاهدة تفاعلية
+                                </button>
+                                
+                                                                    <a href="https://www.youtube.com/watch?v=NMPX5U8v4A8" target="_blank" rel="noopener noreferrer" class="btn btn-secondary btn-sm" title="فتح على يوتيوب" style="flex:1;">
+                                        <i class="fa-brands fa-youtube" style="color:#EF4444;"></i> يوتيوب
+                                    </a>
+                                                            </div>
+                        </div>
+
+                    </div>
+                                                        <div class="video-card" data-type="full_playlist">
+                        
+                        <!-- Thumbnail مع زر التشغيل المباشر -->
+                        <div class="video-thumb-wrap" onclick="openVideoModal('1z0Z8FFnc8c', 'دورة هندسة الشبكات Cisco CCNA 200-301 بالعربي (قائمة تشغيل كاملة)', 'https://www.youtube.com/watch?v=1z0Z8FFnc8c')">
+                            <img src="https://img.youtube.com/vi/1z0Z8FFnc8c/hqdefault.jpg" alt="دورة هندسة الشبكات Cisco CCNA 200-301 بالعربي (قائمة تشغيل كاملة)" class="video-thumb-img" onerror="this.src='https://images.unsplash.com/photo-1544197150-b99a580bb7a8?w=500&auto=format&fit=crop';">
+                            <div class="video-play-overlay">
+                                <div class="video-play-btn">
+                                    <i class="fa-solid fa-play"></i>
+                                </div>
+                            </div>
+                            <span class="video-duration-pill">
+                                <i class="fa-solid fa-clock"></i> 45+ فيديو تدريبي                            </span>
+                        </div>
+
+                        <!-- المحتوى -->
+                        <div class="video-card-body">
+                            <span class="video-badge-tag playlist">
+                                الدورة الموصى بها رسمياً ⭐                            </span>
+
+                            <h3 class="video-card-title" title="دورة هندسة الشبكات Cisco CCNA 200-301 بالعربي (قائمة تشغيل كاملة)">
+                                دورة هندسة الشبكات Cisco CCNA 200-301 بالعربي (قائمة تشغيل كاملة)                            </h3>
+
+                            <div class="video-card-instructor">
+                                <i class="fa-solid fa-chalkboard-user" style="color:var(--brand-primary);"></i>
+                                م. عادل الحميدي / Network Academy                            </div>
+
+                            <p class="video-card-desc">
+                                الشرح العربي الأكثر شمولاً لمعايير CCNA، يبدأ من الصفر وصولاً إلى أعلى مستويات الاحتراف مع تطبيقات Packet Tracer.                            </p>
+
+                            <div class="video-card-actions">
+                                <button type="button" onclick="openVideoModal('1z0Z8FFnc8c', 'دورة هندسة الشبكات Cisco CCNA 200-301 بالعربي (قائمة تشغيل كاملة)', 'https://www.youtube.com/watch?v=1z0Z8FFnc8c')" class="btn btn-primary btn-sm" style="flex:2; font-weight:700;">
+                                    <i class="fa-solid fa-play"></i> مشاهدة تفاعلية
+                                </button>
+                                
+                                                                    <a href="https://www.youtube.com/playlist?list=PL1UX3jI2z7XW4x8y7SXZ15k6hD8h5t_Qj" target="_blank" rel="noopener noreferrer" class="btn btn-secondary btn-sm" title="فتح قائمة التشغيل كاملة على يوتيوب" style="flex:1;">
+                                        <i class="fa-solid fa-list"></i> السلسلة
+                                    </a>
+                                                            </div>
+                        </div>
+
+                    </div>
+                            </div>
+
+        </section>
+
+        <!-- نافذة مشغل الفيديو المنبثقة التفاعلية (Video Modal Window) -->
+        <div class="video-modal-backdrop" id="video-modal-backdrop" onclick="closeVideoModalOnBackdrop(event)">
+            <div class="video-modal-window">
+                <div class="video-modal-header">
+                    <h3 class="video-modal-title">
+                        <i class="fa-brands fa-youtube" style="color:#EF4444;"></i>
+                        <span id="modal-video-title">عنوان الدرس</span>
+                    </h3>
+                    <button type="button" class="video-modal-close" onclick="closeVideoModal()" title="إغلاق">
+                        <i class="fa-solid fa-xmark"></i>
+                    </button>
+                </div>
+
+                <div class="video-modal-iframe-box">
+                    <iframe id="modal-video-iframe" src="" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                </div>
+
+                <div class="video-modal-footer">
+                    <span style="color:#94A3B8; font-size:0.86rem;">
+                        <i class="fa-solid fa-circle-info"></i> المشاهدة المباشرة دون إعلانات داخل بيئة NetLearn Pro.
+                    </span>
+                    <a href="#" id="modal-video-extlink" target="_blank" rel="noopener noreferrer" class="btn btn-sm" style="background:rgba(255,255,255,0.1); color:#FFF !important; border:1px solid rgba(255,255,255,0.2);">
+                        <i class="fa-brands fa-youtube" style="color:#EF4444;"></i> فتح الرابط على يوتيوب ↗
+                    </a>
+                </div>
+            </div>
+        </div>
+
+        <script>
+        // تصفية البطاقات
+        function filterVideoCards(type) {
+            document.querySelectorAll('.video-filter-btn').forEach(btn => btn.classList.remove('active'));
+            event.currentTarget.classList.add('active');
+
+            const cards = document.querySelectorAll('#video-cards-grid .video-card');
+            cards.forEach(card => {
+                if (type === 'all' || card.dataset.type === type) {
+                    card.style.display = 'flex';
+                } else {
+                    card.style.display = 'none';
+                }
+            });
+        }
+
+        // تشغيل وإغلاق نافذة المشغل المنبثقة
+        function openVideoModal(youtubeId, title, externalUrl) {
+            const backdrop = document.getElementById('video-modal-backdrop');
+            const iframe = document.getElementById('modal-video-iframe');
+            const titleEl = document.getElementById('modal-video-title');
+            const extLink = document.getElementById('modal-video-extlink');
+
+            titleEl.textContent = title;
+            extLink.href = externalUrl;
+            iframe.src = 'https://www.youtube.com/embed/' + youtubeId + '?autoplay=1&rel=0';
+
+            backdrop.style.display = 'flex';
+            document.body.style.overflow = 'hidden';
+        }
+
+        function closeVideoModal() {
+            const backdrop = document.getElementById('video-modal-backdrop');
+            const iframe = document.getElementById('modal-video-iframe');
+
+            iframe.src = '';
+            backdrop.style.display = 'none';
+            document.body.style.overflow = '';
+        }
+
+        function closeVideoModalOnBackdrop(e) {
+            if (e.target.id === 'video-modal-backdrop') {
+                closeVideoModal();
+            }
+        }
+
+        document.addEventListener('keydown', function(e) {
+            if (e.key === 'Escape') {
+                closeVideoModal();
+            }
+        });
+        </script>
+            </div>
+
+    <!-- 7. صندوق الانتقال للاختبار الأكاديمي -->
+    <div class="next-step-card" style="background:#FFFFFF; border:2px solid rgba(91,79,232,0.25); border-radius:var(--radius-xl); padding:40px 30px; text-align:center; box-shadow:var(--shadow-card); margin-top:28px;">
+        <div style="width:64px; height:64px; border-radius:50%; background:var(--brand-gradient); display:flex; align-items:center; justify-content:center; margin:0 auto 16px; color:#FFF; font-size:26px; box-shadow:0 8px 20px rgba(91,79,232,0.3);">
+            <i class="fa-solid fa-trophy"></i>
+        </div>
+        <h3 style="margin-bottom:8px; color:var(--text-heading); font-size:1.4rem; font-weight:900;">
+            جاهز لاعتماد المستوى في سجلك الأكاديمي؟
+        </h3>
+        <p style="color:var(--text-muted); font-size:0.96rem; max-width:620px; margin:0 auto 26px; line-height:1.7;">
+            خض الاختبار المعتمد المكون من أسئلة CCNA التخصصية للحصول على التقييم الأكاديمي وفتح المستوى التالي في مسارك التكيفي.
+        </p>
+        <div style="display:flex; justify-content:center; gap:14px; flex-wrap:wrap;">
+            <a href="exam.php?level_id=1" class="btn btn-primary btn-lg" style="font-weight:800; padding:15px 32px; border-radius:var(--radius-md);">
+                <i class="fa-solid fa-bolt"></i> خوض اختبار المستوى الآن
+            </a>
+            <a href="dashboard.php" class="btn btn-secondary btn-lg" style="font-weight:700; padding:15px 24px; border-radius:var(--radius-md);">
+                <i class="fa-solid fa-chart-pie"></i> العودة للوحة التقدم
+            </a>
+        </div>
+    </div>
+
+</div>
+
+<!-- السكربتات التفاعلية الشاملة -->
+<script>
+// 1. القراءة الصوتية بالذكاء الاصطناعي (Speech Synthesis)
+let isSpeaking = false;
+function toggleAudioReader() {
+    if (!('speechSynthesis' in window)) {
+        alert('خاصية القراءة الصوتية غير مدعومة في هذا المتصفح.');
+        return;
+    }
+
+    const icon = document.getElementById('tts-icon');
+    const text = document.getElementById('tts-text');
+    const hudIcon = document.getElementById('tts-hud-icon');
+    const hudText = document.getElementById('tts-hud-text');
+
+    if (isSpeaking) {
+        window.speechSynthesis.cancel();
+        isSpeaking = false;
+        if (icon) icon.className = 'fa-solid fa-volume-high';
+        if (text) text.textContent = 'استمع صوتياً';
+        if (hudIcon) hudIcon.className = 'fa-solid fa-volume-high';
+        if (hudText) hudText.textContent = 'استماع صوتي';
+    } else {
+        const summary = document.querySelector('.module-summary-box');
+        const callout = document.querySelector('.callout-box');
+        const bodyText = (summary ? summary.innerText : '') + ' ' + (callout ? callout.innerText : '');
+        const utterance = new SpeechSynthesisUtterance(bodyText);
+        utterance.lang = 'ar-SA';
+        utterance.rate = 0.95;
+
+        utterance.onend = function() {
+            isSpeaking = false;
+            if (icon) icon.className = 'fa-solid fa-volume-high';
+            if (text) text.textContent = 'استمع صوتياً';
+            if (hudIcon) hudIcon.className = 'fa-solid fa-volume-high';
+            if (hudText) hudText.textContent = 'استماع صوتي';
+        };
+
+        window.speechSynthesis.speak(utterance);
+        isSpeaking = true;
+        if (icon) icon.className = 'fa-solid fa-pause';
+        if (text) text.textContent = 'إيقاف مؤقت';
+        if (hudIcon) hudIcon.className = 'fa-solid fa-pause';
+        if (hudText) hudText.textContent = 'إيقاف مؤقت';
+    }
+}
+
+// 2. التحكم بحجم الخط (Font Size Adjuster)
+let currentFontSizeState = 0; // -1: small, 0: default, 1: large
+function adjustFontSize(dir) {
+    const el = document.getElementById('lesson-text-body');
+    if (!el) return;
+    if (dir === 0) {
+        currentFontSizeState = 0;
+        el.style.fontSize = '1.02rem';
+    } else if (dir === -1) {
+        currentFontSizeState = -1;
+        el.style.fontSize = '0.92rem';
+    } else if (dir === 1) {
+        currentFontSizeState = 1;
+        el.style.fontSize = '1.16rem';
+    }
+}
+
+// 3. نسخ أوامر سيسكو إلى الحافظة (Clipboard Copy)
+function copyTerminalText(elementId) {
+    const el = document.getElementById(elementId);
+    if (!el) return;
+    const text = el.innerText || el.textContent;
+    navigator.clipboard.writeText(text).then(() => {
+        alert('✅ تم نسخ أوامر سيسكو بنجاح إلى الحافظة!');
+    }).catch(err => {
+        console.error('فشل النسخ:', err);
+    });
+}
+
+// 4. تعقب التقدم بالقراءة والـ ScrollSpy للفهرس التفاعلي
+window.addEventListener('scroll', function() {
+    // تحديث شريط التقدم العلوي
+    const docElem = document.documentElement;
+    const docBody = document.body;
+    const scrollTop = docElem.scrollTop || docBody.scrollTop;
+    const scrollHeight = (docElem.scrollHeight || docBody.scrollHeight) - docElem.clientHeight;
+    const pct = scrollHeight > 0 ? Math.min(100, Math.round((scrollTop / scrollHeight) * 100)) : 0;
+    
+    const fill = document.getElementById('hud-progress-fill');
+    const pctText = document.getElementById('hud-pct');
+    if (fill) fill.style.width = pct + '%';
+    if (pctText) pctText.textContent = pct + '%';
+
+    // تمييز الرابط النشط في الفهرس التفاعلي (ScrollSpy)
+    const sections = document.querySelectorAll('[id^="sec-"]');
+    let currentId = '';
+    sections.forEach(sec => {
+        const rect = sec.getBoundingClientRect();
+        if (rect.top <= 180 && rect.bottom >= 0) {
+            currentId = sec.id;
+        }
+    });
+
+    if (currentId) {
+        document.querySelectorAll('.toc-item-link').forEach(link => {
+            if (link.getAttribute('href') === '#' + currentId) {
+                link.classList.add('active');
+            } else {
+                link.classList.remove('active');
+            }
+        });
+    }
+});
+
+// 5. مستكشف طبقات OSI التفاعلي (المستوى 1)
+function toggleOsiDetails(layerNum) {
+    const el = document.getElementById('osi-details-' + layerNum);
+    if (!el) return;
+    const isShown = el.style.display === 'block';
+    
+    // إغلاق البقية
+    for (let i = 1; i <= 7; i++) {
+        const other = document.getElementById('osi-details-' + i);
+        if (other) other.style.display = 'none';
+    }
+
+    if (!isShown) {
+        el.style.display = 'block';
+    }
+}
+
+function runEncapsulationDemo() {
+    let current = 7;
+    const interval = setInterval(() => {
+        toggleOsiDetails(current);
+        current--;
+        if (current < 1) {
+            clearInterval(interval);
+        }
+    }, 600);
+}
+
+// 6. حاسبة Subnetting التفاعلية الحية (المستوى 2)
+function runSubnetCalc() {
+    const ipInput = document.getElementById('calc-ip');
+    const cidrSelect = document.getElementById('calc-cidr');
+    if (!ipInput || !cidrSelect) return;
+
+    const ipStr = ipInput.value.trim();
+    const cidr = parseInt(cidrSelect.value, 10);
+    const parts = ipStr.split('.').map(p => parseInt(p, 10));
+
+    if (parts.length !== 4 || parts.some(p => isNaN(p) || p < 0 || p > 255)) {
+        return;
+    }
+
+    const hostBits = 32 - cidr;
+    const totalHosts = Math.pow(2, hostBits);
+    const usableHosts = totalHosts >= 2 ? totalHosts - 2 : 0;
+
+    // تحويل IP إلى عدد 32 بت
+    const ipInt = ((parts[0] << 24) >>> 0) + ((parts[1] << 16) >>> 0) + ((parts[2] << 8) >>> 0) + (parts[3] >>> 0);
+    const maskInt = hostBits === 0 ? 0xFFFFFFFF : (((0xFFFFFFFF << hostBits) >>> 0));
+    const netInt = (ipInt & maskInt) >>> 0;
+    const bcastInt = (netInt | (~maskInt >>> 0)) >>> 0;
+
+    const toIp = int => [ (int >>> 24) & 255, (int >>> 16) & 255, (int >>> 8) & 255, int & 255 ].join('.');
+
+    const netId = toIp(netInt);
+    const bcast = toIp(bcastInt);
+    const firstHost = toIp(netInt + 1);
+    const lastHost = toIp(bcastInt - 1);
+
+    const rNet = document.getElementById('res-net-id');
+    const rBcast = document.getElementById('res-bcast');
+    const rRange = document.getElementById('res-range');
+    const rHosts = document.getElementById('res-hosts');
+
+    if (rNet) rNet.textContent = netId;
+    if (rBcast) rBcast.textContent = bcast;
+    if (rRange) rRange.textContent = firstHost + ' - ' + lastHost;
+    if (rHosts) rHosts.textContent = usableHosts.toLocaleString() + ' جهازاً';
+}
+
+// 7. محاكي OSPF Cost (المستوى 3)
+function calcOspfCost(bwMbps, name) {
+    const refBw = 100; // 100 Mbps
+    const cost = Math.max(1, Math.round(refBw / bwMbps));
+    const portName = document.getElementById('ospf-port-name');
+    const costVal = document.getElementById('ospf-cost-val');
+    if (portName) portName.textContent = name;
+    if (costVal) costVal.textContent = 'Cost = ' + cost;
+}
+
+// 8. محاكي Extended ACL (المستوى 4)
+function testAclPacket(srcIp, port, isPermit) {
+    const resBox = document.getElementById('acl-test-result');
+    if (!resBox) return;
+    resBox.style.display = 'block';
+
+    if (isPermit) {
+        resBox.style.background = '#ECFDF5';
+        resBox.style.border = '1.5px solid #A7F3D0';
+        resBox.style.color = '#065F46';
+        resBox.innerHTML = '<i class="fa-solid fa-circle-check"></i> <strong>PERMITTED (مسموح):</strong> الحزمة القادمة من ' + srcIp + ' على المنفذ ' + port + ' تطابق صراحة قاعدة التصريح: <code>permit tcp 192.168.1.0/24 any eq 80</code>.';
+    } else {
+        resBox.style.background = '#FFF1F2';
+        resBox.style.border = '1.5px solid #FECDD3';
+        resBox.style.color = '#9F1239';
+        resBox.innerHTML = '<i class="fa-solid fa-triangle-exclamation"></i> <strong>DENIED (محجوب):</strong> الحزمة القادمة من ' + srcIp + ' على المنفذ ' + port + ' لم تطابق قاعدة التصريح، فتم إسقاطها بقاعدة الحجب الضمني غير المرئية <code>Implicit Deny Any</code>.';
+    }
+}
+
+// 9. اختبار قياس الاستيعاب الفوري (Knowledge Check Logic)
+let correctAnswersCount = 0;
+const answeredQuestions = {};
+
+function checkAnswer(qNum, selectedOpt, isCorrect, explanation) {
+    const card = document.getElementById('qc-' + qNum);
+    const fb = document.getElementById('qfb-' + qNum);
+    if (!card || !fb) return;
+    const btns = card.querySelectorAll('.quiz-opt-btn');
+
+    // تعطيل الأزرار
+    btns.forEach(btn => {
+        btn.disabled = true;
+        btn.style.cursor = 'default';
+        btn.style.opacity = '0.7';
+    });
+
+    // تمييز الإجابة
+    btns.forEach(btn => {
+        if (btn.textContent.trim().startsWith(selectedOpt + ')')) {
+            btn.style.opacity = '1';
+            btn.className += isCorrect ? ' correct' : ' wrong';
+        }
+    });
+
+    // إظهار الشرح
+    fb.style.display = 'block';
+    fb.style.background = isCorrect ? '#ECFDF5' : '#FFF1F2';
+    fb.style.color = isCorrect ? '#065F46' : '#9F1239';
+    fb.style.border = isCorrect ? '1px solid #A7F3D0' : '1px solid #FECDD3';
+    fb.innerHTML = (isCorrect ? '<i class="fa-solid fa-circle-check"></i> ' : '<i class="fa-solid fa-circle-xmark"></i> ') + explanation;
+
+    if (!answeredQuestions[qNum]) {
+        answeredQuestions[qNum] = true;
+        if (isCorrect) {
+            correctAnswersCount++;
+        }
+        const badge = document.getElementById('quiz-score-badge');
+        if (badge) badge.textContent = correctAnswersCount + ' / 3';
+
+        if (correctAnswersCount === 3) {
+            const congrats = document.getElementById('quiz-congrats-box');
+            if (congrats) congrats.style.display = 'block';
+        }
+    }
+}
+</script>
+
+
+            </main><!-- .app-page-body -->
+
+            <footer class="app-footer">
+                <div style="display: flex; align-items: center; gap: 8px;">
+                    <div style="width:24px;height:24px;border-radius:6px;background:var(--brand-gradient);display:flex;align-items:center;justify-content:center;">
+                        <i class="fa-solid fa-network-wired" style="color:#FFF;font-size:10px;"></i>
+                    </div>
+                    <span style="font-weight: 700; color: var(--text-heading);">NetLearn Pro</span>
+                    <span>&copy; 2026</span>
+                    <span style="color: var(--text-dim);">|</span>
+                    <span style="color: var(--brand-secondary); font-weight: 600;">منصة التعلم التكيفي لهندسة الشبكات</span>
+                </div>
+                <div style="display: flex; gap: 16px; font-size: 0.82rem; color: var(--text-muted);">
+                    <span><i class="fa-solid fa-graduation-cap" style="color: var(--brand-primary);"></i> مشروع تخرج أكاديمي</span>
+                    <span><i class="fa-solid fa-certificate" style="color: var(--brand-secondary);"></i> متوافق مع Cisco CCNA</span>
+                </div>
+            </footer>
+        </div><!-- .app-workspace -->
+    </div><!-- .app-layout -->
+
+
+</body>
+</html>

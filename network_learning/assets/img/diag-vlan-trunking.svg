@@ -1,0 +1,103 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 480" width="100%" height="100%">
+  <defs>
+    <linearGradient id="vlanBg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#0F172A" />
+      <stop offset="100%" stop-color="#1E1B4B" />
+    </linearGradient>
+    <linearGradient id="vlan10" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#3B82F6" />
+      <stop offset="100%" stop-color="#1D4ED8" />
+    </linearGradient>
+    <linearGradient id="vlan20" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#F59E0B" />
+      <stop offset="100%" stop-color="#B45309" />
+    </linearGradient>
+  </defs>
+
+  <rect width="900" height="480" rx="16" fill="url(#vlanBg)" />
+  <rect width="896" height="476" x="2" y="2" rx="15" fill="none" stroke="#3B82F6" stroke-opacity="0.3" stroke-width="1.5" />
+
+  <!-- Header -->
+  <g transform="translate(40, 40)">
+    <text x="0" y="20" font-family="'Cairo', sans-serif" font-size="22" font-weight="800" fill="#FFFFFF">
+      تقسيم الشبكات الافتراضية والربط المشترك: VLAN Segmentation &amp; 802.1Q Trunking
+    </text>
+    <text x="0" y="40" font-family="'JetBrains Mono', monospace" font-size="12" fill="#94A3B8">
+      INTER-VLAN ROUTING (ROUTER-ON-A-STICK VIA SUB-INTERFACES G0/0.10 &amp; G0/0.20)
+    </text>
+  </g>
+
+  <!-- Router on a Stick (Top Center) -->
+  <g transform="translate(350, 95)">
+    <rect width="200" height="75" rx="12" fill="#1E293B" stroke="#06B6D4" stroke-width="2" />
+    <text x="100" y="32" font-family="'JetBrains Mono', monospace" font-size="16" font-weight="900" fill="#38BDF8" text-anchor="middle">ROUTER R1</text>
+    <text x="100" y="52" font-family="'JetBrains Mono', monospace" font-size="10" fill="#94A3B8" text-anchor="middle">Inter-VLAN Gateway</text>
+    <text x="100" y="66" font-family="'JetBrains Mono', monospace" font-size="9" fill="#06B6D4" text-anchor="middle">G0/0.10 (.1) | G0/0.20 (.1)</text>
+  </g>
+
+  <!-- Trunk Link Line -->
+  <line x1="450" y1="170" x2="450" y2="240" stroke="#8B5CF6" stroke-width="4" />
+  <g transform="translate(460, 195)">
+    <rect width="130" height="24" rx="4" fill="#2E1065" stroke="#8B5CF6" />
+    <text x="65" y="16" font-family="'JetBrains Mono', monospace" font-size="10" font-weight="700" fill="#C084FC" text-anchor="middle">802.1Q TRUNK (G0/1)</text>
+  </g>
+
+  <!-- Switch (Center) -->
+  <g transform="translate(330, 240)">
+    <rect width="240" height="70" rx="10" fill="#1E293B" stroke="#334155" stroke-width="1.8" />
+    <text x="120" y="30" font-family="'JetBrains Mono', monospace" font-size="15" font-weight="800" fill="#FFFFFF" text-anchor="middle">CATALYST SWITCH SW1</text>
+    <text x="120" y="52" font-family="'Cairo', sans-serif" font-size="11" fill="#94A3B8" text-anchor="middle">مبدل الطبقة الثانية مع تقسيم الـ VLANs</text>
+  </g>
+
+  <!-- Left: VLAN 10 (Engineering / HR) -->
+  <g transform="translate(60, 220)">
+    <!-- Container -->
+    <rect width="230" height="190" rx="12" fill="rgba(59, 130, 246, 0.08)" stroke="#3B82F6" stroke-width="1.5" />
+    <rect x="0" y="0" width="230" height="30" rx="10" fill="url(#vlan10)" />
+    <text x="115" y="20" font-family="'JetBrains Mono', monospace" font-size="12" font-weight="800" fill="#FFF" text-anchor="middle">VLAN 10: ENGINEERING</text>
+    <text x="115" y="50" font-family="'JetBrains Mono', monospace" font-size="10" fill="#60A5FA" text-anchor="middle">Subnet: 192.168.10.0/24</text>
+
+    <!-- Host PC 1 -->
+    <rect x="25" y="70" width="180" height="48" rx="6" fill="#1E293B" stroke="#3B82F6" />
+    <text x="35" y="92" font-family="'JetBrains Mono', monospace" font-size="11" font-weight="700" fill="#FFF">PC-10 (Fa0/10)</text>
+    <text x="35" y="108" font-family="'JetBrains Mono', monospace" font-size="9" fill="#94A3B8">IP: 192.168.10.10</text>
+
+    <!-- Host PC 2 -->
+    <rect x="25" y="128" width="180" height="48" rx="6" fill="#1E293B" stroke="#3B82F6" />
+    <text x="35" y="150" font-family="'JetBrains Mono', monospace" font-size="11" font-weight="700" fill="#FFF">PC-11 (Fa0/11)</text>
+    <text x="35" y="166" font-family="'JetBrains Mono', monospace" font-size="9" fill="#94A3B8">IP: 192.168.10.11</text>
+  </g>
+
+  <!-- Right: VLAN 20 (Finance / Sales) -->
+  <g transform="translate(610, 220)">
+    <!-- Container -->
+    <rect width="230" height="190" rx="12" fill="rgba(245, 158, 11, 0.08)" stroke="#F59E0B" stroke-width="1.5" />
+    <rect x="0" y="0" width="230" height="30" rx="10" fill="url(#vlan20)" />
+    <text x="115" y="20" font-family="'JetBrains Mono', monospace" font-size="12" font-weight="800" fill="#FFF" text-anchor="middle">VLAN 20: FINANCE</text>
+    <text x="115" y="50" font-family="'JetBrains Mono', monospace" font-size="10" fill="#FBBF24" text-anchor="middle">Subnet: 192.168.20.0/24</text>
+
+    <!-- Host PC 3 -->
+    <rect x="25" y="70" width="180" height="48" rx="6" fill="#1E293B" stroke="#F59E0B" />
+    <text x="35" y="92" font-family="'JetBrains Mono', monospace" font-size="11" font-weight="700" fill="#FFF">PC-20 (Fa0/20)</text>
+    <text x="35" y="108" font-family="'JetBrains Mono', monospace" font-size="9" fill="#94A3B8">IP: 192.168.20.20</text>
+
+    <!-- Host PC 4 -->
+    <rect x="25" y="128" width="180" height="48" rx="6" fill="#1E293B" stroke="#F59E0B" />
+    <text x="35" y="150" font-family="'JetBrains Mono', monospace" font-size="11" font-weight="700" fill="#FFF">PC-21 (Fa0/21)</text>
+    <text x="35" y="166" font-family="'JetBrains Mono', monospace" font-size="9" fill="#94A3B8">IP: 192.168.20.21</text>
+  </g>
+
+  <!-- Access Link Lines -->
+  <line x1="290" y1="280" x2="330" y2="280" stroke="#3B82F6" stroke-width="2.5" />
+  <line x1="570" y1="280" x2="610" y2="280" stroke="#F59E0B" stroke-width="2.5" />
+
+  <!-- Bottom Legend -->
+  <g transform="translate(40, 430)">
+    <rect width="820" height="35" rx="6" fill="rgba(255,255,255,0.04)" />
+    <text x="410" y="22" font-family="'Cairo', sans-serif" font-size="12" fill="#94A3B8" text-anchor="middle">
+      <tspan fill="#3B82F6">■ منفذ نفاذ (Access Port - VLAN 10)</tspan> | 
+      <tspan fill="#F59E0B">■ منفذ نفاذ (Access Port - VLAN 20)</tspan> | 
+      <tspan fill="#8B5CF6">■ خط التوصيل المشترك (802.1Q Trunk Port - يحمل ترويسات الـ Tags)</tspan>
+    </text>
+  </g>
+</svg>

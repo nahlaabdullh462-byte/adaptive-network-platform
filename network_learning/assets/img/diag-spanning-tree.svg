@@ -1,0 +1,124 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 480" width="100%" height="100%">
+  <defs>
+    <linearGradient id="stpBg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#0F172A" />
+      <stop offset="100%" stop-color="#1E1B4B" />
+    </linearGradient>
+    <linearGradient id="rootGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#10B981" />
+      <stop offset="100%" stop-color="#047857" />
+    </linearGradient>
+    <linearGradient id="swGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#3B82F6" />
+      <stop offset="100%" stop-color="#1D4ED8" />
+    </linearGradient>
+  </defs>
+
+  <rect width="900" height="480" rx="16" fill="url(#stpBg)" />
+  <rect width="896" height="476" x="2" y="2" rx="15" fill="none" stroke="#10B981" stroke-opacity="0.3" stroke-width="1.5" />
+
+  <!-- Header -->
+  <g transform="translate(40, 40)">
+    <text x="0" y="20" font-family="'Cairo', sans-serif" font-size="22" font-weight="800" fill="#FFFFFF">
+      بروتوكول شجرة الامتداد: Spanning Tree Protocol (STP 802.1D) Bridge Election
+    </text>
+    <text x="0" y="40" font-family="'JetBrains Mono', monospace" font-size="12" fill="#94A3B8">
+      TRIANGLE REDUNDANT TOPOLOGY &amp; LOOP PREVENTION (ROOT BRIDGE, ROOT PORTS, BLOCKED PORT)
+    </text>
+  </g>
+
+  <!-- Triangle Links (Lines connecting switches) -->
+  <!-- Switch 1 (Root): (450, 160) -->
+  <!-- Switch 2: (220, 360) -->
+  <!-- Switch 3: (680, 360) -->
+  <line x1="450" y1="160" x2="220" y2="360" stroke="#10B981" stroke-width="3" />
+  <line x1="450" y1="160" x2="680" y2="360" stroke="#10B981" stroke-width="3" />
+  <line x1="220" y1="360" x2="680" y2="360" stroke="#F43F5E" stroke-dasharray="6,6" stroke-width="3" />
+
+  <!-- Switch 1: ROOT BRIDGE (Top Center) -->
+  <g transform="translate(360, 100)">
+    <rect width="180" height="90" rx="12" fill="url(#rootGrad)" stroke="#6EE7B7" stroke-width="2" />
+    <rect x="0" y="0" width="180" height="24" rx="10" fill="rgba(0,0,0,0.2)" />
+    <text x="90" y="17" font-family="'Cairo', sans-serif" font-size="11" font-weight="800" fill="#FFF" text-anchor="middle">الجسر الجذري (ROOT BRIDGE)</text>
+    <text x="90" y="48" font-family="'JetBrains Mono', monospace" font-size="16" font-weight="900" fill="#FFF" text-anchor="middle">SWITCH 1 (SW1)</text>
+    <text x="90" y="66" font-family="'JetBrains Mono', monospace" font-size="10" fill="#E6FFFA" text-anchor="middle">Priority: 24576 (Lowest)</text>
+    <text x="90" y="80" font-family="'JetBrains Mono', monospace" font-size="9.5" fill="#A7F3D0" text-anchor="middle">MAC: 0001.42A1.0001</text>
+  </g>
+
+  <!-- SW1 Ports: Both are Designated Ports (DP) -->
+  <!-- Left Port (towards SW2) -->
+  <g transform="translate(390, 200)">
+    <rect width="40" height="22" rx="4" fill="#10B981" />
+    <text x="20" y="15" font-family="'JetBrains Mono', monospace" font-size="10" font-weight="800" fill="#FFF" text-anchor="middle">DP</text>
+    <text x="50" y="15" font-family="'JetBrains Mono', monospace" font-size="9" fill="#94A3B8">Fa0/1</text>
+  </g>
+  <!-- Right Port (towards SW3) -->
+  <g transform="translate(470, 200)">
+    <rect width="40" height="22" rx="4" fill="#10B981" />
+    <text x="20" y="15" font-family="'JetBrains Mono', monospace" font-size="10" font-weight="800" fill="#FFF" text-anchor="middle">DP</text>
+    <text x="-15" y="15" font-family="'JetBrains Mono', monospace" font-size="9" fill="#94A3B8">Fa0/2</text>
+  </g>
+
+  <!-- Switch 2: Non-Root Switch (Bottom Left) -->
+  <g transform="translate(130, 310)">
+    <rect width="180" height="90" rx="12" fill="url(#swGrad)" stroke="#93C5FD" stroke-width="1.8" />
+    <rect x="0" y="0" width="180" height="24" rx="10" fill="rgba(0,0,0,0.2)" />
+    <text x="90" y="17" font-family="'Cairo', sans-serif" font-size="11" font-weight="800" fill="#FFF" text-anchor="middle">مبدل فرعي (NON-ROOT)</text>
+    <text x="90" y="48" font-family="'JetBrains Mono', monospace" font-size="16" font-weight="900" fill="#FFF" text-anchor="middle">SWITCH 2 (SW2)</text>
+    <text x="90" y="66" font-family="'JetBrains Mono', monospace" font-size="10" fill="#EFF6FF" text-anchor="middle">Priority: 32768</text>
+    <text x="90" y="80" font-family="'JetBrains Mono', monospace" font-size="9.5" fill="#BFDBFE" text-anchor="middle">MAC: 0002.55B2.0002</text>
+  </g>
+
+  <!-- SW2 Ports: Top is Root Port (RP), Right is Designated Port (DP) -->
+  <g transform="translate(250, 280)">
+    <rect width="40" height="22" rx="4" fill="#3B82F6" />
+    <text x="20" y="15" font-family="'JetBrains Mono', monospace" font-size="10" font-weight="800" fill="#FFF" text-anchor="middle">RP</text>
+    <text x="-15" y="15" font-family="'JetBrains Mono', monospace" font-size="9" fill="#94A3B8">Fa0/1</text>
+  </g>
+  <g transform="translate(320, 350)">
+    <rect width="40" height="22" rx="4" fill="#10B981" />
+    <text x="20" y="15" font-family="'JetBrains Mono', monospace" font-size="10" font-weight="800" fill="#FFF" text-anchor="middle">DP</text>
+    <text x="20" y="36" font-family="'JetBrains Mono', monospace" font-size="9" fill="#94A3B8" text-anchor="middle">Fa0/2</text>
+  </g>
+
+  <!-- Switch 3: Non-Root Switch with Blocked Port (Bottom Right) -->
+  <g transform="translate(590, 310)">
+    <rect width="180" height="90" rx="12" fill="url(#swGrad)" stroke="#93C5FD" stroke-width="1.8" />
+    <rect x="0" y="0" width="180" height="24" rx="10" fill="rgba(0,0,0,0.2)" />
+    <text x="90" y="17" font-family="'Cairo', sans-serif" font-size="11" font-weight="800" fill="#FFF" text-anchor="middle">مبدل فرعي (NON-ROOT)</text>
+    <text x="90" y="48" font-family="'JetBrains Mono', monospace" font-size="16" font-weight="900" fill="#FFF" text-anchor="middle">SWITCH 3 (SW3)</text>
+    <text x="90" y="66" font-family="'JetBrains Mono', monospace" font-size="10" fill="#EFF6FF" text-anchor="middle">Priority: 32768</text>
+    <text x="90" y="80" font-family="'JetBrains Mono', monospace" font-size="9.5" fill="#BFDBFE" text-anchor="middle">MAC: 0003.88C3.0003</text>
+  </g>
+
+  <!-- SW3 Ports: Top is Root Port (RP), Left is BLOCKED (Alternate / Discarding) -->
+  <g transform="translate(610, 280)">
+    <rect width="40" height="22" rx="4" fill="#3B82F6" />
+    <text x="20" y="15" font-family="'JetBrains Mono', monospace" font-size="10" font-weight="800" fill="#FFF" text-anchor="middle">RP</text>
+    <text x="50" y="15" font-family="'JetBrains Mono', monospace" font-size="9" fill="#94A3B8">Fa0/1</text>
+  </g>
+  <!-- BLOCKED PORT HIGHLIGHT -->
+  <g transform="translate(540, 350)">
+    <rect width="42" height="22" rx="4" fill="#EF4444" stroke="#FCA5A5" stroke-width="1.5" />
+    <text x="21" y="15" font-family="'JetBrains Mono', monospace" font-size="10" font-weight="900" fill="#FFF" text-anchor="middle">BLK</text>
+    <text x="21" y="36" font-family="'JetBrains Mono', monospace" font-size="9" fill="#F87171" text-anchor="middle">Fa0/2 (Blocked)</text>
+  </g>
+
+  <!-- Center Loop Prevention Badge -->
+  <g transform="translate(400, 335)">
+    <rect width="100" height="34" rx="6" fill="#1E293B" stroke="#F43F5E" stroke-width="1.2" />
+    <text x="50" y="21" font-family="'Cairo', sans-serif" font-size="11" font-weight="800" fill="#F43F5E" text-anchor="middle">
+      منع الحلقات (No Loop)
+    </text>
+  </g>
+
+  <!-- Bottom Legend -->
+  <g transform="translate(40, 425)">
+    <rect width="820" height="40" rx="8" fill="rgba(255,255,255,0.04)" />
+    <text x="410" y="25" font-family="'Cairo', sans-serif" font-size="12" fill="#94A3B8" text-anchor="middle">
+      <tspan fill="#10B981">■ منفذ مخصص (Designated DP - Forwarding)</tspan> | 
+      <tspan fill="#3B82F6">■ منفذ جذري (Root Port RP - Forwarding)</tspan> | 
+      <tspan fill="#EF4444">■ منفذ محظور (Alternate AP - Blocking/Discarding)</tspan>
+    </text>
+  </g>
+</svg>

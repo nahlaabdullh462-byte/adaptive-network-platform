@@ -1,0 +1,118 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 120 120" width="100%" height="100%">
+  <defs>
+    <!-- Background Gradient for Icon Container -->
+    <linearGradient id="bgGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#12132A" />
+      <stop offset="50%" stop-color="#1A1C3E" />
+      <stop offset="100%" stop-color="#0B0D1D" />
+    </linearGradient>
+
+    <!-- Neon Circuit Gradients -->
+    <linearGradient id="cyanGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#38BDF8" />
+      <stop offset="100%" stop-color="#06B6D4" />
+    </linearGradient>
+
+    <linearGradient id="indigoGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#818CF8" />
+      <stop offset="100%" stop-color="#4F46E5" />
+    </linearGradient>
+
+    <linearGradient id="purpleGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#C084FC" />
+      <stop offset="100%" stop-color="#7C3AED" />
+    </linearGradient>
+
+    <radialGradient id="coreLight" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#FFFFFF" stop-opacity="1" />
+      <stop offset="30%" stop-color="#38BDF8" stop-opacity="0.9" />
+      <stop offset="70%" stop-color="#6366F1" stop-opacity="0.4" />
+      <stop offset="100%" stop-color="#06B6D4" stop-opacity="0" />
+    </radialGradient>
+
+    <filter id="neonGlow" x="-30%" y="-30%" width="160%" height="160%">
+      <feGaussianBlur stdDeviation="2.5" result="blur" />
+      <feMerge>
+        <feMergeNode in="blur" />
+        <feMergeNode in="SourceGraphic" />
+      </feMerge>
+    </filter>
+
+    <filter id="softGlow" x="-50%" y="-50%" width="200%" height="200%">
+      <feGaussianBlur stdDeviation="5" />
+    </filter>
+  </defs>
+
+  <!-- Base Rounded Container with subtle border -->
+  <rect width="120" height="120" rx="26" fill="url(#bgGrad)" />
+  <rect width="118" height="118" x="1" y="1" rx="25" fill="none" stroke="url(#indigoGrad)" stroke-width="1.2" stroke-opacity="0.5" />
+
+  <!-- Ambient Light Pulse -->
+  <circle cx="60" cy="60" r="32" fill="url(#coreLight)" opacity="0.35" filter="url(#softGlow)" />
+
+  <!-- Geometric Network Polyhedron / Tesseract Wireframe -->
+  <g filter="url(#neonGlow)">
+    <!-- Outer Hexagon Structure -->
+    <!-- Vertices: Top(60,20), TopRight(95,40), BottomRight(95,80), Bottom(60,100), BottomLeft(25,80), TopLeft(25,40) -->
+    <polygon points="60,20 95,40 95,80 60,100 25,80 25,40" fill="none" stroke="url(#cyanGrad)" stroke-width="2" stroke-linejoin="round" />
+
+    <!-- Inner Inverted Hexagon / Perspective Box -->
+    <!-- Inner Vertices: (60,38), (80,49), (80,71), (60,82), (40,71), (40,49) -->
+    <polygon points="60,38 80,49 80,71 60,82 40,71 40,49" fill="rgba(99, 102, 241, 0.08)" stroke="url(#purpleGrad)" stroke-width="1.6" stroke-linejoin="round" />
+
+    <!-- Isometric Cross Struts connecting Outer & Inner -->
+    <line x1="60" y1="20" x2="60" y2="38" stroke="url(#cyanGrad)" stroke-width="1.8" />
+    <line x1="95" y1="40" x2="80" y2="49" stroke="url(#cyanGrad)" stroke-width="1.8" />
+    <line x1="95" y1="80" x2="80" y2="71" stroke="url(#cyanGrad)" stroke-width="1.8" />
+    <line x1="60" y1="100" x2="60" y2="82" stroke="url(#cyanGrad)" stroke-width="1.8" />
+    <line x1="25" y1="80" x2="40" y2="71" stroke="url(#cyanGrad)" stroke-width="1.8" />
+    <line x1="25" y1="40" x2="40" y2="49" stroke="url(#cyanGrad)" stroke-width="1.8" />
+
+    <!-- Inner Core Radial Laser Lines to Center Hub (60,60) -->
+    <line x1="60" y1="60" x2="60" y2="38" stroke="#38BDF8" stroke-width="1.5" stroke-dasharray="2,2" />
+    <line x1="60" y1="60" x2="80" y2="49" stroke="#38BDF8" stroke-width="1.5" stroke-dasharray="2,2" />
+    <line x1="60" y1="60" x2="80" y2="71" stroke="#38BDF8" stroke-width="1.5" stroke-dasharray="2,2" />
+    <line x1="60" y1="60" x2="60" y2="82" stroke="#38BDF8" stroke-width="1.5" stroke-dasharray="2,2" />
+    <line x1="60" y1="60" x2="40" y2="71" stroke="#38BDF8" stroke-width="1.5" stroke-dasharray="2,2" />
+    <line x1="60" y1="60" x2="40" y2="49" stroke="#38BDF8" stroke-width="1.5" stroke-dasharray="2,2" />
+
+    <!-- Antenna / Radiating Fiber Optic Links with Nodes -->
+    <line x1="60" y1="20" x2="60" y2="10" stroke="#38BDF8" stroke-width="2" />
+    <circle cx="60" cy="10" r="3.2" fill="#E0F2FE" />
+
+    <line x1="95" y1="40" x2="105" y2="34" stroke="#818CF8" stroke-width="2" />
+    <circle cx="105" cy="34" r="3" fill="#C084FC" />
+
+    <line x1="95" y1="80" x2="105" y2="86" stroke="#38BDF8" stroke-width="2" />
+    <circle cx="105" cy="86" r="3" fill="#38BDF8" />
+
+    <line x1="60" y1="100" x2="60" y2="110" stroke="#818CF8" stroke-width="2" />
+    <circle cx="60" cy="110" r="3.2" fill="#818CF8" />
+
+    <line x1="25" y1="80" x2="15" y2="86" stroke="#38BDF8" stroke-width="2" />
+    <circle cx="15" cy="86" r="3" fill="#38BDF8" />
+
+    <line x1="25" y1="40" x2="15" y2="34" stroke="#818CF8" stroke-width="2" />
+    <circle cx="15" cy="34" r="3" fill="#C084FC" />
+
+    <!-- Vertex Optical Nodes -->
+    <circle cx="60" cy="20" r="3.8" fill="#38BDF8" />
+    <circle cx="95" cy="40" r="3.8" fill="#818CF8" />
+    <circle cx="95" cy="80" r="3.8" fill="#38BDF8" />
+    <circle cx="60" cy="100" r="3.8" fill="#818CF8" />
+    <circle cx="25" cy="80" r="3.8" fill="#38BDF8" />
+    <circle cx="25" cy="40" r="3.8" fill="#818CF8" />
+
+    <!-- Inner Sub-Nodes -->
+    <circle cx="60" cy="38" r="2.8" fill="#C084FC" />
+    <circle cx="80" cy="49" r="2.8" fill="#38BDF8" />
+    <circle cx="80" cy="71" r="2.8" fill="#C084FC" />
+    <circle cx="60" cy="82" r="2.8" fill="#38BDF8" />
+    <circle cx="40" cy="71" r="2.8" fill="#C084FC" />
+    <circle cx="40" cy="49" r="2.8" fill="#38BDF8" />
+
+    <!-- Central Super-Luminous Core Node -->
+    <circle cx="60" cy="60" r="6" fill="#FFFFFF" stroke="#38BDF8" stroke-width="2" />
+    <circle cx="60" cy="60" r="2.5" fill="#38BDF8" />
+  </g>
+</svg>

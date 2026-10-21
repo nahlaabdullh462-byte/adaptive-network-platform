@@ -1,0 +1,103 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 480" width="100%" height="100%">
+  <defs>
+    <linearGradient id="ipv6Bg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#0F172A" />
+      <stop offset="100%" stop-color="#1E1B4B" />
+    </linearGradient>
+    <linearGradient id="hGrad1" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#38BDF8" />
+      <stop offset="100%" stop-color="#0284C7" />
+    </linearGradient>
+    <linearGradient id="hGrad2" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#818CF8" />
+      <stop offset="100%" stop-color="#4F46E5" />
+    </linearGradient>
+  </defs>
+
+  <rect width="900" height="480" rx="16" fill="url(#ipv6Bg)" />
+  <rect width="896" height="476" x="2" y="2" rx="15" fill="none" stroke="#818CF8" stroke-opacity="0.3" stroke-width="1.5" />
+
+  <!-- Header -->
+  <g transform="translate(40, 40)">
+    <text x="0" y="20" font-family="'Cairo', sans-serif" font-size="22" font-weight="800" fill="#FFFFFF">
+      هيكلية ترويسة حزم الجيل السادس: IPv6 Fixed Header (40 Bytes)
+    </text>
+    <text x="0" y="40" font-family="'JetBrains Mono', monospace" font-size="12" fill="#94A3B8">
+      SIMPLIFIED 8-FIELD FIXED HEADER ARCHITECTURE (vs 14-FIELD VARIABLE IPV4 HEADER)
+    </text>
+  </g>
+
+  <!-- 32-Bit Column Marks (0 to 31) -->
+  <g transform="translate(40, 95)">
+    <rect width="820" height="24" rx="4" fill="#1E293B" />
+    <text x="50" y="16" font-family="'JetBrains Mono', monospace" font-size="10" font-weight="700" fill="#94A3B8">Bits 0-3</text>
+    <text x="160" y="16" font-family="'JetBrains Mono', monospace" font-size="10" font-weight="700" fill="#94A3B8">Bits 4-11</text>
+    <text x="450" y="16" font-family="'JetBrains Mono', monospace" font-size="10" font-weight="700" fill="#94A3B8">Bits 12-31 (Flow Label)</text>
+    <text x="790" y="16" font-family="'JetBrains Mono', monospace" font-size="10" font-weight="700" fill="#94A3B8">Bit 31</text>
+  </g>
+
+  <!-- Row 1: Version (4) + Traffic Class (8) + Flow Label (20) = 32 bits (4 bytes) -->
+  <g transform="translate(40, 125)">
+    <!-- Version -->
+    <rect x="0" y="0" width="100" height="50" rx="6" fill="url(#hGrad1)" stroke="#38BDF8" stroke-width="1" />
+    <text x="50" y="22" font-family="'JetBrains Mono', monospace" font-size="11" font-weight="800" fill="#FFF" text-anchor="middle">VERSION</text>
+    <text x="50" y="38" font-family="'JetBrains Mono', monospace" font-size="10" fill="#E0F2FE" text-anchor="middle">4 Bits (0110)</text>
+
+    <!-- Traffic Class -->
+    <rect x="105" y="0" width="200" height="50" rx="6" fill="url(#hGrad1)" stroke="#38BDF8" stroke-width="1" />
+    <text x="205" y="22" font-family="'JetBrains Mono', monospace" font-size="11" font-weight="800" fill="#FFF" text-anchor="middle">TRAFFIC CLASS</text>
+    <text x="205" y="38" font-family="'JetBrains Mono', monospace" font-size="10" fill="#E0F2FE" text-anchor="middle">8 Bits (DiffServ / QoS)</text>
+
+    <!-- Flow Label -->
+    <rect x="310" y="0" width="510" height="50" rx="6" fill="url(#hGrad1)" stroke="#38BDF8" stroke-width="1" />
+    <text x="565" y="22" font-family="'JetBrains Mono', monospace" font-size="11" font-weight="800" fill="#FFF" text-anchor="middle">FLOW LABEL</text>
+    <text x="565" y="38" font-family="'JetBrains Mono', monospace" font-size="10" fill="#E0F2FE" text-anchor="middle">20 Bits (Real-Time Quality of Service Tracking)</text>
+  </g>
+
+  <!-- Row 2: Payload Length (16) + Next Header (8) + Hop Limit (8) = 32 bits (4 bytes) -->
+  <g transform="translate(40, 180)">
+    <!-- Payload Length -->
+    <rect x="0" y="0" width="410" height="50" rx="6" fill="url(#hGrad2)" stroke="#818CF8" stroke-width="1" />
+    <text x="205" y="22" font-family="'JetBrains Mono', monospace" font-size="11" font-weight="800" fill="#FFF" text-anchor="middle">PAYLOAD LENGTH</text>
+    <text x="205" y="38" font-family="'JetBrains Mono', monospace" font-size="10" fill="#EDE9FE" text-anchor="middle">16 Bits (Bytes after 40-byte IPv6 header)</text>
+
+    <!-- Next Header -->
+    <rect x="415" y="0" width="200" height="50" rx="6" fill="url(#hGrad2)" stroke="#818CF8" stroke-width="1" />
+    <text x="515" y="22" font-family="'JetBrains Mono', monospace" font-size="11" font-weight="800" fill="#FFF" text-anchor="middle">NEXT HEADER</text>
+    <text x="515" y="38" font-family="'JetBrains Mono', monospace" font-size="10" fill="#EDE9FE" text-anchor="middle">8 Bits (Replaces IPv4 Protocol field)</text>
+
+    <!-- Hop Limit -->
+    <rect x="620" y="0" width="200" height="50" rx="6" fill="url(#hGrad2)" stroke="#818CF8" stroke-width="1" />
+    <text x="720" y="22" font-family="'JetBrains Mono', monospace" font-size="11" font-weight="800" fill="#FFF" text-anchor="middle">HOP LIMIT</text>
+    <text x="720" y="38" font-family="'JetBrains Mono', monospace" font-size="10" fill="#EDE9FE" text-anchor="middle">8 Bits (Replaces IPv4 TTL field)</text>
+  </g>
+
+  <!-- Row 3: Source IPv6 Address (128 bits = 16 bytes) -->
+  <g transform="translate(40, 235)">
+    <rect width="820" height="65" rx="6" fill="#1E293B" stroke="#06B6D4" stroke-width="1.5" />
+    <text x="20" y="25" font-family="'JetBrains Mono', monospace" font-size="11" font-weight="800" fill="#38BDF8">SOURCE IPV6 ADDRESS (128 Bits / 16 Bytes)</text>
+    <text x="20" y="48" font-family="'JetBrains Mono', monospace" font-size="13" font-weight="700" fill="#FFFFFF">
+      2001:0DB8:85A3:0000:0000:8A2E:0370:7334 <tspan fill="#94A3B8">→ 2001:db8:85a3::8a2e:370:7334</tspan>
+    </text>
+  </g>
+
+  <!-- Row 4: Destination IPv6 Address (128 bits = 16 bytes) -->
+  <g transform="translate(40, 305)">
+    <rect width="820" height="65" rx="6" fill="#1E293B" stroke="#10B981" stroke-width="1.5" />
+    <text x="20" y="25" font-family="'JetBrains Mono', monospace" font-size="11" font-weight="800" fill="#34D399">DESTINATION IPV6 ADDRESS (128 Bits / 16 Bytes)</text>
+    <text x="20" y="48" font-family="'JetBrains Mono', monospace" font-size="13" font-weight="700" fill="#FFFFFF">
+      2607:F8B0:4005:0805:0000:0000:0000:200E <tspan fill="#94A3B8">→ 2607:f8b0:4005:805::200e</tspan>
+    </text>
+  </g>
+
+  <!-- Bottom Key Comparison Info -->
+  <g transform="translate(40, 390)">
+    <rect width="820" height="65" rx="8" fill="rgba(255,255,255,0.03)" stroke="rgba(255,255,255,0.1)" />
+    <text x="20" y="24" font-family="'Cairo', sans-serif" font-size="12" font-weight="700" fill="#38BDF8">
+      المزايا الأكاديمية لحزمة IPv6 في شهادة Cisco CCNA:
+    </text>
+    <text x="20" y="46" font-family="'Cairo', sans-serif" font-size="11" fill="#94A3B8">
+      1. حجم الترويسة ثابت دائماً (40 بايت) لتسريع معالجة الموجهات Hardware Switching | 2. إلغاء حقل Checksum لتخفيف العبء | 3. إلغاء حقول التجزئة Fragmentation بالترويسة الأساسية
+    </text>
+  </g>
+</svg>
